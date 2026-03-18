@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ga6ja1jjtls0"]
+
+[ext_resource type="Script" uid="uid://cr2m6q7mpwc1b" path="res://scripts/player_3d.gd" id="1_52vux"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rwvw1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_52vux"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rwvw1"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_52vux"]
+
+[node name="Player3D" type="Node3D" unique_id=60074126]
+script = ExtResource("1_52vux")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=601114705]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=9787558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.29, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_rwvw1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1342573172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.29, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_52vux")
+
+[node name="head" type="MeshInstance3D" parent="." unique_id=705407804]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.29, 0, 1.4139189, 0)
+mesh = SubResource("SphereMesh_rwvw1")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=579446691]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.147039, -4.7224107)
+
+[node name="right" type="MeshInstance3D" parent="." unique_id=1710532116]
+transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.15, -0.72389185, 1.0963831, 0)
+mesh = SubResource("SphereMesh_52vux")
