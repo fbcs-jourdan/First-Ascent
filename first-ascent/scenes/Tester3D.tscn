@@ -15,6 +15,8 @@ sky = SubResource("Sky_7tnf1")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7tnf1"]
+
 [node name="Tester3D" type="Node3D" unique_id=1237177132]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=87452133]
@@ -25,12 +27,15 @@ transform = Transform3D(-1, 7.5710346e-08, -4.3711385e-08, 0, 0.49999997, 0.8660
 shadow_enabled = true
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=2124012706]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-size = Vector3(50, 1, 50)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+use_collision = true
+size = Vector3(50, 10, 50)
+material = SubResource("StandardMaterial3D_7tnf1")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=348336793]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0)
 size = Vector3(13, 50, 1)
 
 [node name="Player3D" parent="." unique_id=60074126 instance=ExtResource("1_7tnf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0339441, -0.9723053)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76, -1.5)
+mass = 1.0
