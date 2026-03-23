@@ -4,7 +4,10 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_52vux"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_52vux"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_52vux"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_52vux"]
+size = Vector3(1, 2.3422852, 0.1430664)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rwvw1"]
 
@@ -28,6 +31,11 @@ text = "R
 "
 font_size = 165
 
+[node name="Area3D" type="Area3D" parent="right" unique_id=1504384617]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="right/Area3D" unique_id=973877733]
+shape = SubResource("SphereShape3D_52vux")
+
 [node name="left" type="MeshInstance3D" parent="." unique_id=1472470934]
 transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.15, 0.72, 1.096, 0)
 mesh = SubResource("SphereMesh_52vux")
@@ -37,8 +45,14 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 text = "L"
 font_size = 165
 
+[node name="Area3D" type="Area3D" parent="left" unique_id=1913593256]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="left/Area3D" unique_id=578622582]
+shape = SubResource("SphereShape3D_52vux")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1342573172]
-shape = SubResource("CapsuleShape3D_52vux")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43790722, -0.030517578)
+shape = SubResource("BoxShape3D_52vux")
 
 [node name="body" type="MeshInstance3D" parent="." unique_id=9787558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.28999996, 0, 0, 0)

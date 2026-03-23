@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dsev8vhdfu2st"
-path="res://.godot/imported/Clifftile Convex.dae-e71fc633c17f303a66bc19b75baecc5b.scn"
+path="res://.godot/imported/Clifftile Convex.dae-008c73824c34487ded57be0b61d76db0.scn"
 
 [deps]
 
-source_file="res://assets/Clifftile Convex.dae"
-dest_files=["res://.godot/imported/Clifftile Convex.dae-e71fc633c17f303a66bc19b75baecc5b.scn"]
+source_file="res://assets/low-poly-cliff/Clifftile Convex.dae"
+dest_files=["res://.godot/imported/Clifftile Convex.dae-008c73824c34487ded57be0b61d76db0.scn"]
 
 [params]
 

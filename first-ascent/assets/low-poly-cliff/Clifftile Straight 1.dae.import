@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b74mio7n6jgbu"
-path="res://.godot/imported/Clifftile Straight 1.dae-d1164aab600ea7bff4708d33f97c99f9.scn"
+path="res://.godot/imported/Clifftile Straight 1.dae-f4aef81cdc8014d12f64087572dabe6f.scn"
 
 [deps]
 
-source_file="res://assets/Clifftile Straight 1.dae"
-dest_files=["res://.godot/imported/Clifftile Straight 1.dae-d1164aab600ea7bff4708d33f97c99f9.scn"]
+source_file="res://assets/low-poly-cliff/Clifftile Straight 1.dae"
+dest_files=["res://.godot/imported/Clifftile Straight 1.dae-f4aef81cdc8014d12f64087572dabe6f.scn"]
 
 [params]
 

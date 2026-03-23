@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c3h17os57l8ao"
-path="res://.godot/imported/Rocktile Straight 1.dae-ce7333ce7280fb6bdcc8803fe65289c3.scn"
+uid="uid://bmqpd0l8ipqjm"
+path="res://.godot/imported/Clifftile Pass 1.dae-4d1e4eb5f1fab25a9311a2015d3f3dfb.scn"
 
 [deps]
 
-source_file="res://assets/Rocktile Straight 1.dae"
-dest_files=["res://.godot/imported/Rocktile Straight 1.dae-ce7333ce7280fb6bdcc8803fe65289c3.scn"]
+source_file="res://assets/low-poly-cliff/Clifftile Pass 1.dae"
+dest_files=["res://.godot/imported/Clifftile Pass 1.dae-4d1e4eb5f1fab25a9311a2015d3f3dfb.scn"]
 
 [params]
 
