@@ -12,6 +12,8 @@ extends RigidBody3D
 @onready var col: CollisionShape3D = $CollisionShape3D
 @onready var player: RigidBody3D = $"."
 
+
+var can_climb := false
 var right_limit
 var left_limit
 var upper_limit
@@ -113,7 +115,3 @@ func update_limits():
 	right_limit = body.global_position.x - 1.5
 	left_limit = body.global_position.x + 1.5
 	upper_limit = body.global_position.y + 5
-
-
-	
-	

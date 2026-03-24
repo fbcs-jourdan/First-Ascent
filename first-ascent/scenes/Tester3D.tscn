@@ -18,7 +18,15 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7tnf1"]
 
-[node name="Tester3D" type="Node3D" unique_id=1237177132]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgcra"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rgcra"]
+material = SubResource("StandardMaterial3D_rgcra")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v4bxi"]
+
+[node name="World3D" type="Node3D" unique_id=1237177132]
 script = ExtResource("1_rgcra")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=87452133]
@@ -42,3 +50,14 @@ size = Vector3(13, 50, 1)
 [node name="Player3D" parent="." unique_id=60074126 instance=ExtResource("1_7tnf1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76, -0.44337702)
 mass = 1.0
+
+[node name="rock" type="Area3D" parent="." unique_id=1840547180]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 1.0140038, 4.8293953, 3.9844728)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="rock" unique_id=987326294]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rock" unique_id=880899912]
+shape = SubResource("BoxShape3D_v4bxi")
+
+[connection signal="body_entered" from="rock" to="Player3D" method="_on_rock_body_entered"]
