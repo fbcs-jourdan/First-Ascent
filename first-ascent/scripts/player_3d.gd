@@ -55,7 +55,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	
-	print(right.global_position.x)
+	#print(right.global_position.x)
 	body.global_position.y = ((right.global_position.y + left.global_position.y) * 0.5)
 	
 	col.global_position.y = body.global_position.y
@@ -64,19 +64,19 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_pressed("climb") and climbing:
 		climbing = false
 	if climbing:
-		if Input.is_action_just_pressed("switch_left"):
+		if Input.is_action_just_pressed("switch_left") and Climb.can_climb:
 			right_selected = false
 			_warp_mouse_to_hand(left)
 			update_limits()
 			#Input.warp_mouse(left.global_position)
-		elif Input.is_action_just_pressed("switch_right"):
+		elif Input.is_action_just_pressed("switch_right") and Climb.can_climb:
 			right_selected = true
 			_warp_mouse_to_hand(right)
 			update_limits()
 		
 		var mouse_pos = get_viewport().get_mouse_position()
 		
-		print(mouse_pos)
+		#print(mouse_pos)
 		var rayStart : Vector3 = cam.project_ray_origin(mouse_pos)
 		var direction : Vector3 = cam.project_ray_normal(mouse_pos)
 		

@@ -15,7 +15,6 @@ script = ExtResource("1_ieres")
 
 [node name="player" parent="." unique_id=2134198571 instance=ExtResource("1_pneyj")]
 position = Vector2(890, 368)
-scale = Vector2(0.15, 0.15)
 
 [node name="TileMap" parent="." unique_id=1099956392 instance=ExtResource("2_yoglf")]
 layer_0/z_index = -1
