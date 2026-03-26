@@ -53,11 +53,8 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	
-	#print(right.global_position.x)
 	body.global_position.y = ((right.global_position.y + left.global_position.y) * 0.5)
-	
+	body.global_position.x = ((right.global_position.x + left.global_position.x) * 0.08)
 	col.global_position.y = body.global_position.y
 	if Input.is_action_just_pressed("climb") and not climbing:
 		climbing = true

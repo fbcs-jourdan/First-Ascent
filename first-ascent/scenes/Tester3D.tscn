@@ -18,6 +18,9 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7tnf1"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rgcra"]
+size = Vector3(12.672119, 1, 4.540039)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgcra"]
 albedo_color = Color(1, 0, 0, 1)
 
@@ -25,9 +28,6 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_rgcra")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v4bxi"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_rgcra"]
-size = Vector3(12.672119, 1, 4.540039)
 
 [node name="World3D" type="Node3D" unique_id=1237177132]
 script = ExtResource("1_rgcra")
@@ -48,97 +48,28 @@ material = SubResource("StandardMaterial3D_7tnf1")
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=348336793]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 4.369873)
 use_collision = true
-size = Vector3(13, 50, 1)
+size = Vector3(4.07, 50, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1162228315]
+transform = Transform3D(0.94392204, 0, 0.33016846, 0, 1, 0, -0.33016846, 0, 0.94392204, 3.2011003, 25, 4.000656)
+use_collision = true
+size = Vector3(4.07, 50, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=963106832]
+transform = Transform3D(0.94392204, 0, 0.33016846, 0, 1, 0, -0.33016846, 0, 0.94392204, 3.2011003, 25, 4.000656)
+use_collision = true
+size = Vector3(4.07, 50, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=2000333659]
+transform = Transform3D(0.9438009, 0, -0.3305144, 0, 1, 0, 0.3305144, 0, 0.9438009, -3.201, 25, 4.001)
+use_collision = true
+size = Vector3(4.07, 50, 1)
 
 [node name="Player3D" parent="." unique_id=60074126 instance=ExtResource("1_7tnf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76, -0.44337702)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.295366, -0.44337702)
 collision_layer = 2
 collision_mask = 5
 mass = 1.0
-
-[node name="rock" type="Area3D" parent="." unique_id=1840547180]
-transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 1.0140038, 4.8293953, 3.9844728)
-collision_layer = 4
-collision_mask = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="rock" unique_id=987326294]
-mesh = SubResource("BoxMesh_rgcra")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="rock" unique_id=880899912]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
-shape = SubResource("BoxShape3D_v4bxi")
-
-[node name="rock7" type="Area3D" parent="." unique_id=1544145502]
-transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -1.0097117, 3.5546942, 3.9844728)
-collision_layer = 4
-collision_mask = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="rock7" unique_id=756113373]
-mesh = SubResource("BoxMesh_rgcra")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="rock7" unique_id=1865444442]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
-shape = SubResource("BoxShape3D_v4bxi")
-
-[node name="rock2" type="Area3D" parent="." unique_id=1450567374]
-transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -0.9425299, 6.328468, 3.9844728)
-collision_layer = 4
-collision_mask = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="rock2" unique_id=504492798]
-mesh = SubResource("BoxMesh_rgcra")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="rock2" unique_id=905797703]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
-shape = SubResource("BoxShape3D_v4bxi")
-
-[node name="rock3" type="Area3D" parent="." unique_id=848687648]
-transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 1.0140038, 7.603752, 3.9844728)
-collision_layer = 4
-collision_mask = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="rock3" unique_id=866987996]
-mesh = SubResource("BoxMesh_rgcra")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="rock3" unique_id=1015458041]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
-shape = SubResource("BoxShape3D_v4bxi")
-
-[node name="rock4" type="Area3D" parent="." unique_id=178065103]
-transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -0.9425299, 9.102825, 3.9844728)
-collision_layer = 4
-collision_mask = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="rock4" unique_id=1152848108]
-mesh = SubResource("BoxMesh_rgcra")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="rock4" unique_id=2116791618]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
-shape = SubResource("BoxShape3D_v4bxi")
-
-[node name="rock5" type="Area3D" parent="." unique_id=1122801718]
-transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 1.0140038, 10.052109, 3.9844728)
-collision_layer = 4
-collision_mask = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="rock5" unique_id=248979148]
-mesh = SubResource("BoxMesh_rgcra")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="rock5" unique_id=1216655716]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
-shape = SubResource("BoxShape3D_v4bxi")
-
-[node name="rock6" type="Area3D" parent="." unique_id=1553466619]
-transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -0.9425299, 11.551182, 3.9844728)
-collision_layer = 4
-collision_mask = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="rock6" unique_id=687054856]
-mesh = SubResource("BoxMesh_rgcra")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="rock6" unique_id=2059220772]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
-shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="ending" type="Area3D" parent="." unique_id=480757566]
 collision_mask = 2
@@ -147,18 +78,398 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03186035, 50.1231, 1.7700195)
 shape = SubResource("BoxShape3D_rgcra")
 
-[connection signal="area_entered" from="rock" to="." method="_on_rock_area_entered"]
-[connection signal="area_exited" from="rock" to="." method="_on_rock_area_exited"]
-[connection signal="area_entered" from="rock7" to="." method="_on_rock_area_entered"]
-[connection signal="area_exited" from="rock7" to="." method="_on_rock_area_exited"]
-[connection signal="area_entered" from="rock2" to="." method="_on_rock_area_entered"]
-[connection signal="area_exited" from="rock2" to="." method="_on_rock_area_exited"]
-[connection signal="area_entered" from="rock3" to="." method="_on_rock_area_entered"]
-[connection signal="area_exited" from="rock3" to="." method="_on_rock_area_exited"]
-[connection signal="area_entered" from="rock4" to="." method="_on_rock_area_entered"]
-[connection signal="area_exited" from="rock4" to="." method="_on_rock_area_exited"]
-[connection signal="area_entered" from="rock5" to="." method="_on_rock_area_entered"]
-[connection signal="area_exited" from="rock5" to="." method="_on_rock_area_exited"]
-[connection signal="area_entered" from="rock6" to="." method="_on_rock_area_entered"]
-[connection signal="area_exited" from="rock6" to="." method="_on_rock_area_exited"]
+[node name="Rocks" type="Node3D" parent="." unique_id=1409433733]
+
+[node name="rock" type="Area3D" parent="Rocks" unique_id=1840547180]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 1.0140038, 4.8293953, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock" unique_id=987326294]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock" unique_id=880899912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock7" type="Area3D" parent="Rocks" unique_id=1544145502]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -1.3344247, 3.5546942, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock7" unique_id=756113373]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock7" unique_id=1865444442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock2" type="Area3D" parent="Rocks" unique_id=1450567374]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -0.23532212, 6.328468, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock2" unique_id=504492798]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock2" unique_id=905797703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock3" type="Area3D" parent="Rocks" unique_id=848687648]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 1.4266648, 8.307614, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock3" unique_id=866987996]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock3" unique_id=1015458041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock4" type="Area3D" parent="Rocks" unique_id=178065103]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -0.746608, 9.841375, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock4" unique_id=1152848108]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock4" unique_id=2116791618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock5" type="Area3D" parent="Rocks" unique_id=1122801718]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -1.4213696, 11.987125, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock5" unique_id=248979148]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock5" unique_id=1216655716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock6" type="Area3D" parent="Rocks" unique_id=1553466619]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -0.9291065, 13.787008, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock6" unique_id=687054856]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock6" unique_id=2059220772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock8" type="Area3D" parent="Rocks" unique_id=636337791]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, -1.6114653, 24.577002, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock8" unique_id=1129112625]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock8" unique_id=973266739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock9" type="Area3D" parent="Rocks" unique_id=2142465615]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 0.75066257, 25.826134, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock9" unique_id=1844916856]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock9" unique_id=2002391876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock10" type="Area3D" parent="Rocks" unique_id=1303574626]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, -0.37848642, 23.064455, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock10" unique_id=950152393]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock10" unique_id=437865041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock11" type="Area3D" parent="Rocks" unique_id=1583323494]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 1.1927698, 21.103468, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock11" unique_id=804233418]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock11" unique_id=653325691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock12" type="Area3D" parent="Rocks" unique_id=2127499311]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 0.09463444, 19.546206, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock12" unique_id=476868113]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock12" unique_id=1248629867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock13" type="Area3D" parent="Rocks" unique_id=1233915090]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 0.74606276, 17.393257, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock13" unique_id=311699084]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock13" unique_id=997660039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock14" type="Area3D" parent="Rocks" unique_id=805128857]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 0.2342898, 15.598825, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock14" unique_id=902838541]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock14" unique_id=1858792345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock15" type="Area3D" parent="Rocks" unique_id=275952831]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 1.5771236, 27.83353, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock15" unique_id=1233869467]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock15" unique_id=1508116191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock16" type="Area3D" parent="Rocks" unique_id=632744835]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -0.77130485, 26.55883, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock16" unique_id=671120809]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock16" unique_id=74587351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock17" type="Area3D" parent="Rocks" unique_id=1631049625]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 0.32779777, 29.332603, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock17" unique_id=1387666076]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock17" unique_id=2112710298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock18" type="Area3D" parent="Rocks" unique_id=908548962]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 1.0192494, 31.311749, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock18" unique_id=1504802706]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock18" unique_id=461760386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock19" type="Area3D" parent="Rocks" unique_id=172921271]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -0.18348813, 32.845512, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock19" unique_id=2098617479]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock19" unique_id=1941746742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock20" type="Area3D" parent="Rocks" unique_id=1574385717]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -0.85824966, 34.99126, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock20" unique_id=2132003608]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock20" unique_id=1139729520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock21" type="Area3D" parent="Rocks" unique_id=1827740684]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -0.3659866, 36.791145, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock21" unique_id=975530962]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock21" unique_id=1671862785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock22" type="Area3D" parent="Rocks" unique_id=424810318]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, -1.0483454, 47.58114, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock22" unique_id=1569962198]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock22" unique_id=1630719388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock23" type="Area3D" parent="Rocks" unique_id=249764481]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 1.3137825, 48.83027, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock23" unique_id=1759096988]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock23" unique_id=72263166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock24" type="Area3D" parent="Rocks" unique_id=1891661196]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 0.18463346, 46.06859, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock24" unique_id=535620621]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock24" unique_id=1937575674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock25" type="Area3D" parent="Rocks" unique_id=1418567428]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, -1.4987404, 44.107605, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock25" unique_id=2035211091]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock25" unique_id=1528037826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock26" type="Area3D" parent="Rocks" unique_id=689434938]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 0.6577543, 42.55034, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock26" unique_id=768153291]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock26" unique_id=783389403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock27" type="Area3D" parent="Rocks" unique_id=1669833363]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 1.3091826, 40.397392, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock27" unique_id=1393732512]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock27" unique_id=1771570097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
+[node name="rock28" type="Area3D" parent="Rocks" unique_id=759834571]
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 0.79740965, 38.60296, 3.9844728)
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock28" unique_id=2080215590]
+mesh = SubResource("BoxMesh_rgcra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock28" unique_id=351611674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+shape = SubResource("BoxShape3D_v4bxi")
+
 [connection signal="body_entered" from="ending" to="." method="_on_ending_body_entered"]
+[connection signal="area_entered" from="Rocks/rock" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock7" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock7" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock2" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock2" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock3" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock3" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock4" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock4" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock5" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock5" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock6" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock6" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock8" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock8" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock9" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock9" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock10" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock10" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock11" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock11" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock12" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock12" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock13" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock13" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock14" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock14" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock15" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock15" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock16" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock16" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock17" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock17" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock18" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock18" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock19" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock19" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock20" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock20" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock21" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock21" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock22" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock22" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock23" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock23" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock24" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock24" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock25" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock25" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock26" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock26" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock27" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock27" to="." method="_on_rock_area_exited"]
+[connection signal="area_entered" from="Rocks/rock28" to="." method="_on_rock_area_entered"]
+[connection signal="area_exited" from="Rocks/rock28" to="." method="_on_rock_area_exited"]

@@ -13,3 +13,9 @@ func _process(delta: float) -> void:
 
 func _on_mountain_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://scenes/Tester3D.tscn")
+	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	DialogueManager.show_example_dialogue_balloon(load("res://dialogue.dialogue"), "start")
+	return

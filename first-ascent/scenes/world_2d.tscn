@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://m53xuq04fn5d" path="res://scripts/world_2d.gd" id="1_ieres"]
 [ext_resource type="PackedScene" uid="uid://ce60qtrh162g4" path="res://scenes/player.tscn" id="1_pneyj"]
 [ext_resource type="PackedScene" uid="uid://4es6tced16wq" path="res://scenes/tile_map.tscn" id="2_yoglf"]
+[ext_resource type="Texture2D" uid="uid://e1jfiybk2ng4" path="res://icon.svg" id="4_6cuhj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vydw8"]
+size = Vector2(55, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yoglf"]
 size = Vector2(80, 64)
@@ -13,8 +17,23 @@ size = Vector2(100, 37)
 [node name="2DWorld1" type="Node2D" unique_id=1543277229]
 script = ExtResource("1_ieres")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=387819146]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=363035679]
+position = Vector2(504.5, 347)
+shape = SubResource("RectangleShape2D_vydw8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=277041951]
+position = Vector2(503.5, 347)
+scale = Vector2(0.44531256, 0.18750022)
+texture = ExtResource("4_6cuhj")
+
 [node name="player" parent="." unique_id=2134198571 instance=ExtResource("1_pneyj")]
 position = Vector2(890, 368)
+collision_layer = 2
+collision_mask = 5
 
 [node name="TileMap" parent="." unique_id=1099956392 instance=ExtResource("2_yoglf")]
 layer_0/z_index = -1
@@ -38,9 +57,11 @@ offset_bottom = 338.0
 text = "mountain"
 
 [node name="mountain" type="Area2D" parent="Label" unique_id=2096987764]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Label/mountain" unique_id=31821609]
 position = Vector2(40, 8.5)
 shape = SubResource("RectangleShape2D_ieres")
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Label/mountain" to="." method="_on_mountain_body_entered"]
