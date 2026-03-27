@@ -66,7 +66,7 @@ use_collision = true
 size = Vector3(4.07, 50, 1)
 
 [node name="Player3D" parent="." unique_id=60074126 instance=ExtResource("1_7tnf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.295366, -0.44337702)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.295366, 3.537274)
 collision_layer = 2
 collision_mask = 5
 mass = 1.0
@@ -141,7 +141,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
 shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="rock5" type="Area3D" parent="Rocks" unique_id=1122801718]
-transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -1.4213696, 11.987125, 3.9844728)
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 1.3293078, 11.987125, 3.9844728)
 collision_layer = 4
 collision_mask = 2
 
