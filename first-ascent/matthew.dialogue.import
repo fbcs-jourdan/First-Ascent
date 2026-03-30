@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dgrjox1qexsgt"
+path="res://.godot/imported/matthew.dialogue-3364838c238956de10f9a73553b41fda.tres"
+
+[deps]
+
+source_file="res://matthew.dialogue"
+dest_files=["res://.godot/imported/matthew.dialogue-3364838c238956de10f9a73553b41fda.tres"]
+
+[params]
+
+defaults=true

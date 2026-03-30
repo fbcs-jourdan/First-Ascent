@@ -16,6 +16,12 @@ func _on_mountain_body_entered(body: Node2D) -> void:
 	
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	DialogueManager.show_example_dialogue_balloon(load("res://dialogue.dialogue"), "start")
-	return
+	
+func _on_friend_2_body_entered(body: Node2D) -> void:
+	DialogueManager.show_example_dialogue_balloon(load("res://will.dialogue"), "start")
+
+func _on_friend_3_body_entered(body: Node2D) -> void:
+	DialogueManager.show_example_dialogue_balloon(load("res://mason.dialogue"), "start")
+
+func _on_friend_body_entered(body: Node2D) -> void:
+	DialogueManager.show_example_dialogue_balloon(load("res://matthew.dialogue"), "start")

@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://4es6tced16wq" path="res://scenes/tile_map.tscn" id="2_yoglf"]
 [ext_resource type="Texture2D" uid="uid://e1jfiybk2ng4" path="res://icon.svg" id="4_6cuhj"]
 [ext_resource type="PackedScene" uid="uid://dj1lgxfpk4inh" path="res://scenes/actionable.tscn" id="5_vydw8"]
-[ext_resource type="Resource" uid="uid://dgrjox1qexsgt" path="res://dialogue.dialogue" id="6_3ttry"]
+[ext_resource type="Resource" uid="uid://dgrjox1qexsgt" path="res://matthew.dialogue" id="6_3ttry"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vydw8"]
-size = Vector2(55, 18)
+size = Vector2(54, 65)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yoglf"]
 size = Vector2(80, 64)
@@ -21,16 +21,44 @@ size = Vector2(100, 37)
 [node name="2DWorld1" type="Node2D" unique_id=1543277229]
 script = ExtResource("1_ieres")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=387819146]
-position = Vector2(1, -5)
+[node name="friend" type="Area2D" parent="." unique_id=387819146]
+position = Vector2(173, -5)
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=363035679]
-position = Vector2(504.5, 346)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="friend" unique_id=363035679]
+position = Vector2(504, 369.5)
 shape = SubResource("RectangleShape2D_vydw8")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=277041951]
+[node name="Sprite2D" type="Sprite2D" parent="friend" unique_id=277041951]
+position = Vector2(503.5, 347)
+scale = Vector2(0.44531256, 0.18750022)
+texture = ExtResource("4_6cuhj")
+
+[node name="friend2" type="Area2D" parent="." unique_id=1115076879]
+position = Vector2(9, -5)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="friend2" unique_id=649389914]
+position = Vector2(503, 369)
+shape = SubResource("RectangleShape2D_vydw8")
+
+[node name="Sprite2D" type="Sprite2D" parent="friend2" unique_id=570417748]
+position = Vector2(503.5, 347)
+scale = Vector2(0.44531256, 0.18750022)
+texture = ExtResource("4_6cuhj")
+
+[node name="friend3" type="Area2D" parent="." unique_id=1039365419]
+position = Vector2(-177, -5)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="friend3" unique_id=1566500004]
+position = Vector2(503, 369)
+shape = SubResource("RectangleShape2D_vydw8")
+
+[node name="Sprite2D" type="Sprite2D" parent="friend3" unique_id=1214622317]
 position = Vector2(503.5, 347)
 scale = Vector2(0.44531256, 0.18750022)
 texture = ExtResource("4_6cuhj")
@@ -74,5 +102,8 @@ dialogue_resource = ExtResource("6_3ttry")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable" unique_id=1375457580]
 shape = SubResource("CircleShape2D_3ttry")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="friend" to="." method="_on_friend_body_entered"]
+[connection signal="body_entered" from="friend2" to="." method="_on_friend_2_body_entered"]
+[connection signal="body_entered" from="friend3" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="friend3" to="." method="_on_friend_3_body_entered"]
 [connection signal="body_entered" from="Label/mountain" to="." method="_on_mountain_body_entered"]
