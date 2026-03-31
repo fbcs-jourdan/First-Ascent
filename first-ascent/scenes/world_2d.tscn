@@ -103,7 +103,9 @@ dialogue_resource = ExtResource("6_3ttry")
 shape = SubResource("CircleShape2D_3ttry")
 
 [connection signal="body_entered" from="friend" to="." method="_on_friend_body_entered"]
+[connection signal="body_exited" from="friend" to="." method="_on_friend_body_exited"]
 [connection signal="body_entered" from="friend2" to="." method="_on_friend_2_body_entered"]
-[connection signal="body_entered" from="friend3" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="friend2" to="." method="_on_friend_2_body_exited"]
 [connection signal="body_entered" from="friend3" to="." method="_on_friend_3_body_entered"]
+[connection signal="body_exited" from="friend3" to="." method="_on_friend_3_body_exited"]
 [connection signal="body_entered" from="Label/mountain" to="." method="_on_mountain_body_entered"]

@@ -56,6 +56,7 @@ func _process(delta: float) -> void:
 	body.global_position.y = ((right.global_position.y + left.global_position.y) * 0.5)
 	body.global_position.x = ((right.global_position.x + left.global_position.x) * 0.08)
 	col.global_position.y = body.global_position.y
+	print(left.global_position.x)
 	if Input.is_action_just_pressed("climb") and not climbing:
 		climbing = true
 	elif Input.is_action_just_pressed("climb") and climbing:
@@ -86,8 +87,8 @@ func _process(delta: float) -> void:
 			right.global_position.x = intersection.x
 			if right.global_position.x < right_limit:
 				right.global_position.x = right_limit
-			elif right.global_position.x > left_limit:
-				right.global_position.x = left_limit
+			elif right.global_position.x > body.global_position.x:
+				right.global_position.x = body.global_position.x
 			if right.global_position.y > upper_limit:
 				right.global_position.y = upper_limit
 			
@@ -96,8 +97,8 @@ func _process(delta: float) -> void:
 			left.global_position.x = intersection.x
 			if left.global_position.x > left_limit:
 				left.global_position.x = left_limit
-			elif left.global_position.x < right_limit:
-				left.global_position.x = right_limit
+			elif left.global_position.x < body.global_position.x:
+				left.global_position.x = body.global_position.x
 			if left.global_position.y > upper_limit:
 				left.global_position.y = upper_limit
 		
