@@ -74,7 +74,7 @@ move_down={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://matthew.dialogue", "res://will.dialogue", "res://mason.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/mason.dialogue", "res://dialogue/matthew.dialogue", "res://dialogue/will.dialogue", "res://dialogue/mom.dialogue", "res://dialogue/dad.dialogue")
 
 [layer_names]
 

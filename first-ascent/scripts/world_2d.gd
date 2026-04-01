@@ -17,15 +17,15 @@ func _on_mountain_body_entered(body: Node2D) -> void:
 
 	
 func _on_friend_2_body_entered(body: Node2D) -> void:
-	DialogueManager.show_example_dialogue_balloon(load("res://will.dialogue"), "start")
+	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/will.dialogue"), "start")
 	Climb.can_move = false
 	
 func _on_friend_3_body_entered(body: Node2D) -> void:
-	DialogueManager.show_example_dialogue_balloon(load("res://mason.dialogue"), "start")
+	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/mason.dialogue"), "start")
 	Climb.can_move = false
 	
 func _on_friend_body_entered(body: Node2D) -> void:
-	DialogueManager.show_example_dialogue_balloon(load("res://matthew.dialogue"), "start")
+	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/matthew.dialogue"), "start")
 	#DialogueManager.emit_signal("dialogue_ended")
 	Climb.can_move = false
 

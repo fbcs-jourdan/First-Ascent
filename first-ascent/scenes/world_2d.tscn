@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://4es6tced16wq" path="res://scenes/tile_map.tscn" id="2_yoglf"]
 [ext_resource type="Texture2D" uid="uid://e1jfiybk2ng4" path="res://icon.svg" id="4_6cuhj"]
 [ext_resource type="PackedScene" uid="uid://dj1lgxfpk4inh" path="res://scenes/actionable.tscn" id="5_vydw8"]
-[ext_resource type="Resource" uid="uid://dgrjox1qexsgt" path="res://matthew.dialogue" id="6_3ttry"]
+[ext_resource type="Resource" uid="uid://dgrjox1qexsgt" path="res://dialogue/matthew.dialogue" id="6_3ttry"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vydw8"]
 size = Vector2(54, 65)

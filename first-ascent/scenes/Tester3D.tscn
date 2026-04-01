@@ -165,7 +165,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
 shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="rock8" type="Area3D" parent="Rocks" unique_id=636337791]
-transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, -1.6114653, 24.577002, 3.9844728)
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, -0.6839062, 24.577002, 3.9844728)
 collision_layer = 4
 collision_mask = 2
 
@@ -189,7 +189,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
 shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="rock10" type="Area3D" parent="Rocks" unique_id=1303574626]
-transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, -0.37848642, 23.064455, 3.9844728)
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 0.48597905, 23.064455, 3.9844728)
 collision_layer = 4
 collision_mask = 2
 
@@ -201,7 +201,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
 shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="rock11" type="Area3D" parent="Rocks" unique_id=1583323494]
-transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 1.1927698, 21.103468, 3.9844728)
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, -0.6746509, 21.103468, 3.9844728)
 collision_layer = 4
 collision_mask = 2
 
@@ -225,7 +225,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
 shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="rock13" type="Area3D" parent="Rocks" unique_id=1233915090]
-transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 0.74606276, 17.393257, 3.9844728)
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, -0.22901225, 17.393257, 3.9844728)
 collision_layer = 4
 collision_mask = 2
 
@@ -242,6 +242,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks/rock14" unique_id=902838541]
+transform = Transform3D(1.0000001, 9.313226e-10, 0, -9.313226e-10, 1.0000001, 0, 0, 0, 1, -0.77990144, -0.008468628, 0)
 mesh = SubResource("BoxMesh_rgcra")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock14" unique_id=1858792345]
@@ -273,7 +274,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
 shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="rock17" type="Area3D" parent="Rocks" unique_id=1631049625]
-transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 0.32779777, 29.332603, 3.9844728)
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -0.028254867, 29.332603, 3.9844728)
 collision_layer = 4
 collision_mask = 2
 
@@ -309,7 +310,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
 shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="rock20" type="Area3D" parent="Rocks" unique_id=1574385717]
-transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -0.85824966, 34.99126, 3.9844728)
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 0.8319833, 34.99126, 3.9844728)
 collision_layer = 4
 collision_mask = 2
 
@@ -369,7 +370,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
 shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="rock25" type="Area3D" parent="Rocks" unique_id=1418567428]
-transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, -1.4987404, 44.107605, 3.9844728)
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, -0.1402781, 44.107605, 3.9844728)
 collision_layer = 4
 collision_mask = 2
 
@@ -393,7 +394,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
 shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="rock27" type="Area3D" parent="Rocks" unique_id=1669833363]
-transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, 1.3091826, 40.397392, 3.9844728)
+transform = Transform3D(-0.29498252, -0.0032024162, 0, 0.0032024162, -0.29498252, 0, 0, 0, 0.295, -0.6859801, 40.397392, 3.9844728)
 collision_layer = 4
 collision_mask = 2
 

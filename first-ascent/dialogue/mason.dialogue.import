@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bmi5pjh1d50xp"
+path="res://.godot/imported/mason.dialogue-3e5e09e1a9e5e82b9bd4fbf9483351de.tres"
+
+[deps]
+
+source_file="res://dialogue/mason.dialogue"
+dest_files=["res://.godot/imported/mason.dialogue-3e5e09e1a9e5e82b9bd4fbf9483351de.tres"]
+
+[params]
+
+defaults=true

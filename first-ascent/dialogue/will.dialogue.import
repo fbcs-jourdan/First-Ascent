@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cttg2nus03ljn"
+path="res://.godot/imported/will.dialogue-b2c0f770eb348cc0427fffd165a303ba.tres"
+
+[deps]
+
+source_file="res://dialogue/will.dialogue"
+dest_files=["res://.godot/imported/will.dialogue-b2c0f770eb348cc0427fffd165a303ba.tres"]
+
+[params]
+
+defaults=true
