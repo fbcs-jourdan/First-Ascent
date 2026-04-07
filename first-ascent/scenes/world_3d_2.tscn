@@ -31,6 +31,10 @@ material = SubResource("StandardMaterial3D_rgcra")
 
 [node name="World3D2" type="Node3D" unique_id=1237177132]
 script = ExtResource("1_kfhiw")
+gust_min_delay = null
+gust_max_delay = null
+gust_duration = null
+wind_strength = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=87452133]
 environment = SubResource("Environment_rgcra")
@@ -758,7 +762,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
 shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="Rocks2" type="Node3D" parent="." unique_id=2114607619]
-transform = Transform3D(0.9438009, 0, 0.3305144, 0, 1, 0, -0.3305144, 0, 0.9438009, 1.834, 0, -0.164)
+transform = Transform3D(0.9438009, 0, 0.3305144, 0, 1, 0, -0.3305144, 0, 0.9438009, 1.834, 0, -0.21348235)
 
 [node name="rock" type="Area3D" parent="Rocks2" unique_id=2010501880]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 1.0140038, 4.8293953, 3.9844728)

@@ -1,13 +1,47 @@
 extends Node3D
 
+@onready var player: RigidBody3D = $Player3D
+
+@export var gust_min_delay := 2.0
+@export var gust_max_delay := 6.0
+@export var gust_duration := 1.5
+@export var wind_strength := 12.0
+
+
+var gust_timer := 0.0
+var gust_time_left := 0.0
+var wind_active := false
+
+
+var wall_normal: Vector3
+var wind_dir := wall_normal.cross(Vector3.UP).normalized()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if randf() > 0.5:
+		wind_dir *= -1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func _physics_process(delta: float) -> void:	
+	if not wind_active:
+		gust_timer -= delta
+		if gust_timer <= 0:
+			wind_active = true
+			gust_time_left = gust_duration
+	else:
+		gust_time_left -= delta
+		if gust_time_left <= 0:
+			wind_active = false
+			gust_timer = randf_range(gust_min_delay, gust_max_delay)
+	if wind_active:
+		player.apply_torque(wind_dir * wind_strength * 0.4)
+		player.apply_central_force(wind_dir * wind_strength)
+
+
 
 
 func _on_ending_body_entered(body: Node3D) -> void:

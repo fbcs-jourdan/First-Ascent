@@ -6,12 +6,11 @@ extends RigidBody3D
 @export var pull_strength := 5
 @export var wall_normal := Vector3.FORWARD # normal pointing OUT of wall
 
-
+@onready var right_bar: ProgressBar = $right/RightBar
 @onready var cam: Camera3D = $body/cam
 @onready var body: MeshInstance3D = $body
 @onready var col: CollisionShape3D = $CollisionShape3D
 @onready var player: RigidBody3D = $"."
-
 
 var can_climb := false
 var right_limit
@@ -28,6 +27,8 @@ func _physics_process(_delta):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	right_bar.global_position.x = right.global_position.x
+	right_bar.global_position.y = right.global_position.y
 	right_limit = body.global_position.x - 1.5
 	left_limit = body.global_position.x + 1.5
 	upper_limit = body.global_position.y + 5

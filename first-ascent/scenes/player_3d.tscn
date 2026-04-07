@@ -38,6 +38,10 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="right/Area3D" unique_id=973877733]
 shape = SubResource("SphereShape3D_52vux")
 
+[node name="RightBar" type="ProgressBar" parent="right" unique_id=1199324389]
+offset_right = 4.0
+offset_bottom = 27.0
+
 [node name="left" type="MeshInstance3D" parent="." unique_id=1472470934]
 transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.15, 0.72, 1.096, 0)
 mesh = SubResource("SphereMesh_52vux")
