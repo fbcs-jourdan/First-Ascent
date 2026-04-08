@@ -3,6 +3,8 @@ extends Node
 var can_climb = false
 
 var can_move = true
+var right_attached = false
+var left_attached = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

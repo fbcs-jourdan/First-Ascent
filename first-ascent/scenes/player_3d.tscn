@@ -38,13 +38,17 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="right/Area3D" unique_id=973877733]
 shape = SubResource("SphereShape3D_52vux")
 
-[node name="RightBar" type="ProgressBar" parent="right" unique_id=1199324389]
-offset_right = 4.0
-offset_bottom = 27.0
+[node name="RightGripLabel" type="Label3D" parent="right" unique_id=1873687611]
+transform = Transform3D(-2.9411764, 0, -2.571258e-07, 0, 2.9411764, 0, 5.828185e-07, 0, -6.6666665, -0.42049575, 3.9684968, 0)
+font_size = 102
 
 [node name="left" type="MeshInstance3D" parent="." unique_id=1472470934]
 transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.15, 0.72, 1.096, 0)
 mesh = SubResource("SphereMesh_52vux")
+
+[node name="LeftGripLabel" type="Label3D" parent="left" unique_id=203944288]
+transform = Transform3D(-2.9411764, 0, -2.571258e-07, 0, 2.9411764, 0, 5.828185e-07, 0, -6.6666665, 0.37547207, 3.9696236, 0)
+font_size = 102
 
 [node name="Label3D" type="Label3D" parent="left" unique_id=617521321]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -1.1558628)

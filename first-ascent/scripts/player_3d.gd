@@ -5,8 +5,11 @@ extends RigidBody3D
 @export var move_radius := 0.5
 @export var pull_strength := 5
 @export var wall_normal := Vector3.FORWARD # normal pointing OUT of wall
+@export var right_grip_strength = 100
+@export var left_grip_strength = 100
+@onready var right_label: Label3D = $right/RightGripLabel
+@onready var left_label: Label3D = $left/LeftGripLabel
 
-@onready var right_bar: ProgressBar = $right/RightBar
 @onready var cam: Camera3D = $body/cam
 @onready var body: MeshInstance3D = $body
 @onready var col: CollisionShape3D = $CollisionShape3D
@@ -18,8 +21,10 @@ var left_limit
 var upper_limit
 var climbing := false
 var right_selected := true
+var left_selected = false
 var right_center
 var left_center
+
 
 func _physics_process(_delta):
 	# Pull into wall (toward the surface)
@@ -27,8 +32,7 @@ func _physics_process(_delta):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	right_bar.global_position.x = right.global_position.x
-	right_bar.global_position.y = right.global_position.y
+
 	right_limit = body.global_position.x - 1.5
 	left_limit = body.global_position.x + 1.5
 	upper_limit = body.global_position.y + 5
@@ -54,22 +58,39 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if right_grip_strength < 0:
+		print("MY NAME IS MATTHEW AND YOU cant use ur right hand")
+	if left_grip_strength < 0:
+		print("MY NAME IS MATTHEW AND YOU cant use ur left hand")
+	# print(right_grip_strength, left_grip_strength)
+	right_label.text = str(int(right_grip_strength))
+	left_label.text = str(int(left_grip_strength))
 	body.global_position.y = ((right.global_position.y + left.global_position.y) * 0.5)
 	body.global_position.x = ((right.global_position.x + left.global_position.x) * 0.08)
 	col.global_position.y = body.global_position.y
-	print(left.global_position.x)
+	# print(left.global_position.x)
 	if Input.is_action_just_pressed("climb") and not climbing:
 		climbing = true
 	elif Input.is_action_just_pressed("climb") and climbing:
 		climbing = false
 	if climbing:
+		if right_selected and Climb.right_attached:
+			left_grip_strength -= 20 * delta
+		if left_selected and Climb.left_attached:
+			right_grip_strength -= 20 * delta
 		if Input.is_action_just_pressed("switch_left") and Climb.can_climb:
 			right_selected = false
+			left_selected = true
+			Climb.right_attached = false
+			Climb.left_attached = true
 			_warp_mouse_to_hand(left)
 			update_limits()
-			#Input.warp_mouse(left.global_position)
-		elif Input.is_action_just_pressed("switch_right") and Climb.can_climb:
+
+		if Input.is_action_just_pressed("switch_right") and Climb.can_climb:
 			right_selected = true
+			left_selected = false
+			Climb.right_attached = true
+			Climb.left_attached = false
 			_warp_mouse_to_hand(right)
 			update_limits()
 		
@@ -102,8 +123,6 @@ func _process(delta: float) -> void:
 				left.global_position.x = body.global_position.x
 			if left.global_position.y > upper_limit:
 				left.global_position.y = upper_limit
-		
-
 
 func _warp_mouse_to_hand(new_hand: MeshInstance3D) -> void:
 	var screen_pos: Vector2 = cam.unproject_position(new_hand.global_transform.origin)
