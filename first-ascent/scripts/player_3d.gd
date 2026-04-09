@@ -19,7 +19,7 @@ var can_climb := false
 var right_limit
 var left_limit
 var upper_limit
-var climbing := false
+var climbing := true
 var right_selected := true
 var left_selected = false
 var right_center
@@ -58,6 +58,12 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	print("right hand attached: " + str(Climb.right_attached))
+	print("left hand attached: " + str(Climb.left_attached))
+	if not Climb.right_attached:
+		right_grip_strength += 5 * delta
+	if not Climb.left_attached:
+		left_grip_strength += 5 * delta
 	if right_grip_strength < 0:
 		print("MY NAME IS MATTHEW AND YOU cant use ur right hand")
 	if left_grip_strength < 0:
@@ -73,24 +79,27 @@ func _process(delta: float) -> void:
 		climbing = true
 	elif Input.is_action_just_pressed("climb") and climbing:
 		climbing = false
+	if not climbing:
+		left_grip_strength += 10 * delta
+		right_grip_strength += 10 * delta
 	if climbing:
-		if right_selected and Climb.right_attached:
+		if right_selected and Climb.left_attached:
 			left_grip_strength -= 20 * delta
-		if left_selected and Climb.left_attached:
+		if left_selected and Climb.right_attached:
 			right_grip_strength -= 20 * delta
 		if Input.is_action_just_pressed("switch_left") and Climb.can_climb:
 			right_selected = false
 			left_selected = true
-			Climb.right_attached = false
-			Climb.left_attached = true
+			Climb.right_attached = true
+			Climb.left_attached = false
 			_warp_mouse_to_hand(left)
 			update_limits()
 
 		if Input.is_action_just_pressed("switch_right") and Climb.can_climb:
 			right_selected = true
 			left_selected = false
-			Climb.right_attached = true
-			Climb.left_attached = false
+			Climb.right_attached = false
+			Climb.left_attached = true
 			_warp_mouse_to_hand(right)
 			update_limits()
 		

@@ -26,7 +26,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func _physics_process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:
+	_blow_wind()	
 	if not wind_active:
 		gust_timer -= delta
 		if gust_timer <= 0:
@@ -59,3 +60,6 @@ func _on_rock_area_entered(area: Area3D) -> void:
 
 func _on_rock_area_exited(area: Area3D) -> void:
 	Climb.can_climb = false
+	
+func _blow_wind() -> void:
+	player.global_position.x -= 0.01

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cyscutbjwvo8d"]
+
+[ext_resource type="Texture2D" uid="uid://e1jfiybk2ng4" path="res://icon.svg" id="1_igof4"]
+
+[node name="SkillCheck" type="Node2D" unique_id=1431191780]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1249550761]
+position = Vector2(783, 316)
+texture = ExtResource("1_igof4")

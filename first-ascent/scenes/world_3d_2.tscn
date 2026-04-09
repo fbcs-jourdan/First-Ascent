@@ -31,10 +31,6 @@ material = SubResource("StandardMaterial3D_rgcra")
 
 [node name="World3D2" type="Node3D" unique_id=1237177132]
 script = ExtResource("1_kfhiw")
-gust_min_delay = null
-gust_max_delay = null
-gust_duration = null
-wind_strength = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=87452133]
 environment = SubResource("Environment_rgcra")
