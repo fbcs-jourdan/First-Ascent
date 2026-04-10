@@ -2,24 +2,10 @@ extends Node3D
 
 @onready var player: RigidBody3D = $Player3D
 
-@export var gust_min_delay := 2.0
-@export var gust_max_delay := 6.0
-@export var gust_duration := 1.5
-@export var wind_strength := 12.0
-
-
-var gust_timer := 0.0
-var gust_time_left := 0.0
-var wind_active := false
-
-
-var wall_normal: Vector3
-var wind_dir := wall_normal.cross(Vector3.UP).normalized()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if randf() > 0.5:
-		wind_dir *= -1
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,21 +13,8 @@ func _process(delta: float) -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:
-	_blow_wind()	
-	if not wind_active:
-		gust_timer -= delta
-		if gust_timer <= 0:
-			wind_active = true
-			gust_time_left = gust_duration
-	else:
-		gust_time_left -= delta
-		if gust_time_left <= 0:
-			wind_active = false
-			gust_timer = randf_range(gust_min_delay, gust_max_delay)
-	if wind_active:
-		player.apply_torque(wind_dir * wind_strength * 0.4)
-		player.apply_central_force(wind_dir * wind_strength)
-
+	_blow_wind()
+	#apply_gravity()
 
 
 
@@ -62,4 +35,15 @@ func _on_rock_area_exited(area: Area3D) -> void:
 	Climb.can_climb = false
 	
 func _blow_wind() -> void:
-	player.global_position.x -= 0.01
+	if not Climb.right_attached and not Climb.left_attached:
+		player.global_position.x -= 0.01
+		player.global_position.y -= .1
+		Climb.wind_blowing = true
+	elif not Climb.has_grip:
+		player.global_position.x -= 0.01
+		player.global_position.y -= .1
+		Climb.wind_blowing = true
+
+func apply_gravity() -> void:
+	pass
+	

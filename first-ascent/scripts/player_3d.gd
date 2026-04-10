@@ -35,7 +35,7 @@ func _ready() -> void:
 
 	right_limit = body.global_position.x - 1.5
 	left_limit = body.global_position.x + 1.5
-	upper_limit = body.global_position.y + 5
+	upper_limit = body.global_position.y + 3
 	update_limits()
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -58,6 +58,9 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Climb.wind_blowing:
+		update_limits()
+		
 	print("right hand attached: " + str(Climb.right_attached))
 	print("left hand attached: " + str(Climb.left_attached))
 	if not Climb.right_attached:
@@ -66,13 +69,17 @@ func _process(delta: float) -> void:
 		left_grip_strength += 5 * delta
 	if right_grip_strength < 0:
 		print("MY NAME IS MATTHEW AND YOU cant use ur right hand")
+		if left_grip_strength < 0:
+			Climb.has_grip = false
 	if left_grip_strength < 0:
 		print("MY NAME IS MATTHEW AND YOU cant use ur left hand")
+		if right_grip_strength < 0:
+			Climb.has_grip = false
 	# print(right_grip_strength, left_grip_strength)
 	right_label.text = str(int(right_grip_strength))
 	left_label.text = str(int(left_grip_strength))
 	body.global_position.y = ((right.global_position.y + left.global_position.y) * 0.5)
-	body.global_position.x = ((right.global_position.x + left.global_position.x) * 0.08)
+	#body.global_position.x = ((right.global_position.x + left.global_position.x) * 0.08)
 	col.global_position.y = body.global_position.y
 	# print(left.global_position.x)
 	if Input.is_action_just_pressed("climb") and not climbing:
@@ -94,6 +101,7 @@ func _process(delta: float) -> void:
 			Climb.left_attached = false
 			_warp_mouse_to_hand(left)
 			update_limits()
+			body.global_position.x = (right.global_position.x + left.global_position.x) * .5
 
 		if Input.is_action_just_pressed("switch_right") and Climb.can_climb:
 			right_selected = true
@@ -102,6 +110,7 @@ func _process(delta: float) -> void:
 			Climb.left_attached = true
 			_warp_mouse_to_hand(right)
 			update_limits()
+			body.global_position.x = (right.global_position.x + left.global_position.x) * .5
 		
 		var mouse_pos = get_viewport().get_mouse_position()
 		
@@ -132,7 +141,7 @@ func _process(delta: float) -> void:
 				left.global_position.x = body.global_position.x
 			if left.global_position.y > upper_limit:
 				left.global_position.y = upper_limit
-
+				
 func _warp_mouse_to_hand(new_hand: MeshInstance3D) -> void:
 	var screen_pos: Vector2 = cam.unproject_position(new_hand.global_transform.origin)
 	Input.warp_mouse(screen_pos)
