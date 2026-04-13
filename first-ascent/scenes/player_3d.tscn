@@ -4,6 +4,9 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_52vux"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_52vux"]
+viewport_path = NodePath("right/Node3D/SubViewport")
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_52vux"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_52vux"]
@@ -25,8 +28,24 @@ left = NodePath("left")
 transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.15, -0.72389185, 1.0963831, 0)
 mesh = SubResource("SphereMesh_52vux")
 
+[node name="Node3D" type="Node3D" parent="right" unique_id=1149170085]
+transform = Transform3D(2.9411764, 0, 0, 0, 2.9411764, 0, 0, 0, 6.6666665, -0.12045264, -4.94099, 0)
+
+[node name="SubViewport" type="SubViewport" parent="right/Node3D" unique_id=336905048]
+size = Vector2i(80, 27)
+
+[node name="right_bar" type="ProgressBar" parent="right/Node3D/SubViewport" unique_id=1427779710]
+offset_right = 80.0
+offset_bottom = 27.0
+value = 50.0
+
+[node name="Sprite3D" type="Sprite3D" parent="right/Node3D" unique_id=445570446]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.0967395, 0)
+texture = SubResource("ViewportTexture_52vux")
+
 [node name="Label3D" type="Label3D" parent="right" unique_id=1611417935]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -1.1558628)
+visible = false
 text = "R
 "
 font_size = 165
@@ -52,6 +71,7 @@ font_size = 102
 
 [node name="Label3D" type="Label3D" parent="left" unique_id=617521321]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -1.1558628)
+visible = false
 text = "L"
 font_size = 165
 
@@ -61,6 +81,21 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="left/Area3D" unique_id=578622582]
 shape = SubResource("SphereShape3D_52vux")
+
+[node name="Node3D2" type="Node3D" parent="left" unique_id=2005719088]
+transform = Transform3D(2.9411764, 0, 0, 0, 2.9411764, 0, 0, 0, 6.6666665, -0.12045264, -4.94099, 0)
+
+[node name="SubViewport" type="SubViewport" parent="left/Node3D2" unique_id=1366724222]
+size = Vector2i(80, 27)
+
+[node name="left_bar" type="ProgressBar" parent="left/Node3D2/SubViewport" unique_id=1922581372]
+offset_right = 80.0
+offset_bottom = 27.0
+value = 50.0
+
+[node name="Sprite3D" type="Sprite3D" parent="left/Node3D2" unique_id=1106450318]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.0967395, 0)
+texture = SubResource("ViewportTexture_52vux")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1342573172]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43790722, -0.030517578)

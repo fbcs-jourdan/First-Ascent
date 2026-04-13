@@ -9,6 +9,8 @@ extends RigidBody3D
 @export var left_grip_strength = 100
 @onready var right_label: Label3D = $right/RightGripLabel
 @onready var left_label: Label3D = $left/LeftGripLabel
+@onready var right_bar: ProgressBar = $right/Node3D/SubViewport/right_bar
+@onready var left_bar: ProgressBar = $left/Node3D2/SubViewport/left_bar
 
 @onready var cam: Camera3D = $body/cam
 @onready var body: MeshInstance3D = $body
@@ -32,7 +34,7 @@ func _physics_process(_delta):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
+	
 	right_limit = body.global_position.x - 1.5
 	left_limit = body.global_position.x + 1.5
 	upper_limit = body.global_position.y + 3
@@ -58,6 +60,9 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	right_bar.value = int(right_grip_strength)
+	left_bar.value = int(left_grip_strength)
+	
 	if Climb.wind_blowing:
 		update_limits()
 		
@@ -75,13 +80,12 @@ func _process(delta: float) -> void:
 		print("MY NAME IS MATTHEW AND YOU cant use ur left hand")
 		if right_grip_strength < 0:
 			Climb.has_grip = false
-	# print(right_grip_strength, left_grip_strength)
 	right_label.text = str(int(right_grip_strength))
 	left_label.text = str(int(left_grip_strength))
 	body.global_position.y = ((right.global_position.y + left.global_position.y) * 0.5)
 	#body.global_position.x = ((right.global_position.x + left.global_position.x) * 0.08)
 	col.global_position.y = body.global_position.y
-	# print(left.global_position.x)
+	
 	if Input.is_action_just_pressed("climb") and not climbing:
 		climbing = true
 	elif Input.is_action_just_pressed("climb") and climbing:
@@ -114,7 +118,6 @@ func _process(delta: float) -> void:
 		
 		var mouse_pos = get_viewport().get_mouse_position()
 		
-		#print(mouse_pos)
 		var rayStart : Vector3 = cam.project_ray_origin(mouse_pos)
 		var direction : Vector3 = cam.project_ray_normal(mouse_pos)
 		
@@ -150,4 +153,5 @@ func _warp_mouse_to_hand(new_hand: MeshInstance3D) -> void:
 func update_limits():
 	right_limit = body.global_position.x - 1.5
 	left_limit = body.global_position.x + 1.5
-	upper_limit = body.global_position.y + 5
+	upper_limit = body.global_position.y + 3
+	

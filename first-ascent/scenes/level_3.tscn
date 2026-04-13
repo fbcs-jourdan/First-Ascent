@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://um2dwmxvb8at"]
+[gd_scene format=3 uid="uid://c0ih2gaaotaop"]
 
-[ext_resource type="Script" uid="uid://vhhhfr5ealxi" path="res://scripts/tester_3d.gd" id="1_kfhiw"]
-[ext_resource type="PackedScene" uid="uid://ga6ja1jjtls0" path="res://scenes/player_3d.tscn" id="2_25cvy"]
+[ext_resource type="Script" uid="uid://vhhhfr5ealxi" path="res://scripts/tester_3d.gd" id="1_h23n6"]
+[ext_resource type="PackedScene" uid="uid://ga6ja1jjtls0" path="res://scenes/player_3d.tscn" id="2_uwxec"]
+[ext_resource type="PackedScene" uid="uid://oskcbpuofwro" path="res://scenes/rock_spawner.tscn" id="3_uwxec"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vk1u"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,8 +30,8 @@ material = SubResource("StandardMaterial3D_rgcra")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v4bxi"]
 
-[node name="World3D2" type="Node3D" unique_id=1237177132]
-script = ExtResource("1_kfhiw")
+[node name="level3" type="Node3D" unique_id=1237177132]
+script = ExtResource("1_h23n6")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=87452133]
 environment = SubResource("Environment_rgcra")
@@ -50,8 +51,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 4.369873)
 use_collision = true
 size = Vector3(4.07, 50, 1)
 
-[node name="Player3D" parent="." unique_id=60074126 instance=ExtResource("2_25cvy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.295366, 3.537274)
+[node name="Player3D" parent="." unique_id=60074126 instance=ExtResource("2_uwxec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.95253, 3.537274)
 collision_layer = 2
 collision_mask = 5
 mass = 1.0
@@ -396,14 +397,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6044827, 25, 4.369873)
 use_collision = true
 size = Vector3(4.07, 50, 1)
 
-[node name="ending2" type="Area3D" parent="." unique_id=477513911]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6044827, 0, 0)
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ending2" unique_id=161752237]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03186035, 50.1231, 1.7700195)
-shape = SubResource("BoxShape3D_rgcra")
-
 [node name="Rocks2" type="Node3D" parent="." unique_id=1472315130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5906982, 0, 0)
 
@@ -736,14 +729,6 @@ shape = SubResource("BoxShape3D_v4bxi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3205185, 25, 4.369873)
 use_collision = true
 size = Vector3(4.07, 50, 1)
-
-[node name="ending3" type="Area3D" parent="." unique_id=1649562645]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3205185, 0, 0)
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ending3" unique_id=1809137980]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03186035, 50.1231, 1.7700195)
-shape = SubResource("BoxShape3D_rgcra")
 
 [node name="Rocks3" type="Node3D" parent="." unique_id=1686831387]
 transform = Transform3D(-0.9999931, -0.003717565, 0, 0.003717565, -0.9999931, 0, 0, 0, 1, -2.334303, 51.15981, 0)
@@ -1416,6 +1401,8 @@ shape = SubResource("BoxShape3D_v4bxi")
 [node name="Timer" type="Timer" parent="." unique_id=1380195945]
 autostart = true
 
+[node name="RockSpawner" parent="." unique_id=1194020508 instance=ExtResource("3_uwxec")]
+
 [connection signal="body_entered" from="ending" to="." method="_on_ending_body_entered"]
 [connection signal="area_entered" from="Rocks/rock" to="." method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rocks/rock" to="." method="_on_rock_area_exited"]
@@ -1471,7 +1458,6 @@ autostart = true
 [connection signal="area_exited" from="Rocks/rock26" to="." method="_on_rock_area_exited"]
 [connection signal="area_entered" from="Rocks/rock27" to="." method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rocks/rock27" to="." method="_on_rock_area_exited"]
-[connection signal="body_entered" from="ending2" to="." method="_on_ending_body_entered"]
 [connection signal="area_entered" from="Rocks2/rock" to="." method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rocks2/rock" to="." method="_on_rock_area_exited"]
 [connection signal="area_entered" from="Rocks2/rock7" to="." method="_on_rock_area_entered"]
@@ -1526,7 +1512,6 @@ autostart = true
 [connection signal="area_exited" from="Rocks2/rock26" to="." method="_on_rock_area_exited"]
 [connection signal="area_entered" from="Rocks2/rock27" to="." method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rocks2/rock27" to="." method="_on_rock_area_exited"]
-[connection signal="body_entered" from="ending3" to="." method="_on_ending_body_entered"]
 [connection signal="area_entered" from="Rocks3/rock" to="." method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rocks3/rock" to="." method="_on_rock_area_exited"]
 [connection signal="area_entered" from="Rocks3/rock7" to="." method="_on_rock_area_entered"]
