@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vhhhfr5ealxi" path="res://scripts/tester_3d.gd" id="1_kfhiw"]
 [ext_resource type="PackedScene" uid="uid://ga6ja1jjtls0" path="res://scenes/player_3d.tscn" id="2_25cvy"]
+[ext_resource type="PackedScene" uid="uid://dra1qg8n71jy4" path="res://scenes/vfx.tscn" id="3_25cvy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vk1u"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,6 +32,8 @@ material = SubResource("StandardMaterial3D_rgcra")
 
 [node name="World3D2" type="Node3D" unique_id=1237177132]
 script = ExtResource("1_kfhiw")
+
+[node name="VFX" parent="." unique_id=226714188 instance=ExtResource("3_25cvy")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=87452133]
 environment = SubResource("Environment_rgcra")
@@ -1415,6 +1418,16 @@ shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="Timer" type="Timer" parent="." unique_id=1380195945]
 autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2021548395]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1899465717]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.14999998, 0.14999998, 1)
 
 [connection signal="body_entered" from="ending" to="." method="_on_ending_body_entered"]
 [connection signal="area_entered" from="Rocks/rock" to="." method="_on_rock_area_entered"]
