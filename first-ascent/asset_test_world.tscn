@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://um2dwmxvb8at"]
+[gd_scene format=3 uid="uid://cy6h3xhm2keq2"]
 
-[ext_resource type="Script" uid="uid://vhhhfr5ealxi" path="res://scripts/tester_3d.gd" id="1_kfhiw"]
-[ext_resource type="PackedScene" uid="uid://ga6ja1jjtls0" path="res://scenes/player_3d.tscn" id="2_25cvy"]
-[ext_resource type="PackedScene" uid="uid://dra1qg8n71jy4" path="res://scenes/vfx.tscn" id="3_25cvy"]
+[ext_resource type="Script" uid="uid://vhhhfr5ealxi" path="res://scripts/tester_3d.gd" id="1_2ewsj"]
+[ext_resource type="PackedScene" uid="uid://dra1qg8n71jy4" path="res://scenes/vfx.tscn" id="2_c4usr"]
+[ext_resource type="PackedScene" uid="uid://ga6ja1jjtls0" path="res://scenes/player_3d.tscn" id="3_fhgft"]
+[ext_resource type="PackedScene" uid="uid://cstd1si0potrp" path="res://assets3D/uploads_files_4268409_rock1+texture/uploads_files_4268409_rocklow.fbx" id="4_qsfxk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vk1u"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,9 +32,9 @@ material = SubResource("StandardMaterial3D_rgcra")
 [sub_resource type="BoxShape3D" id="BoxShape3D_v4bxi"]
 
 [node name="World3D2" type="Node3D" unique_id=1237177132]
-script = ExtResource("1_kfhiw")
+script = ExtResource("1_2ewsj")
 
-[node name="VFX" parent="." unique_id=226714188 instance=ExtResource("3_25cvy")]
+[node name="VFX" parent="." unique_id=226714188 instance=ExtResource("2_c4usr")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=87452133]
 environment = SubResource("Environment_rgcra")
@@ -63,7 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.865841, 25, 4.369873)
 use_collision = true
 size = Vector3(4.07, 50, 1)
 
-[node name="Player3D" parent="." unique_id=60074126 instance=ExtResource("2_25cvy")]
+[node name="Player3D" parent="." unique_id=60074126 instance=ExtResource("3_fhgft")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.295366, 3.537274)
 collision_layer = 2
 collision_mask = 5
@@ -764,6 +765,24 @@ shape = SubResource("BoxShape3D_v4bxi")
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2021548395]
+
+[node name="uploads_files_4268409_rocklow" parent="." unique_id=381515193 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 3.0330882, -0.66934013, 4.727092)
+
+[node name="uploads_files_4268409_rocklow2" parent="." unique_id=622619034 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75166035, -0.6693406, 4.72001)
+
+[node name="uploads_files_4268409_rocklow3" parent="." unique_id=200375275 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3608096, -0.6693392, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow4" parent="." unique_id=195156882 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.1851294, -0.66934013, 4.727092)
+
+[node name="uploads_files_4268409_rocklow5" parent="." unique_id=374274117 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.32391748, 4.891018e-08, -0.94608533, 1.509958e-07, -1, 0, -0.94608533, -1.4285492e-07, -0.32391748, -2.7617693, 6.3373446, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow6" parent="." unique_id=1769527695 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.857408, -0.6693392, 4.8222704)
 
 [connection signal="body_entered" from="ending" to="." method="_on_ending_body_entered"]
 [connection signal="area_entered" from="Rocks/rock" to="." method="_on_rock_area_entered"]

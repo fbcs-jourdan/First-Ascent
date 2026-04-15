@@ -26,24 +26,15 @@ tangential_accel_curve = SubResource("CurveTexture_mkq35")
 damping_max = 100.00001
 scale_min = 1.5
 scale_max = 1.8
-color = Color(1, 0, 0, 1)
 color_ramp = SubResource("GradientTexture1D_d7t0g")
 
 [node name="VFX" type="CanvasLayer" unique_id=171040713]
 layer = 10
 follow_viewport_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=514713280]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.06136909, 0.0613691, 0.06136909, 1)
-
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=4965547]
 top_level = true
-position = Vector2(-443, 128)
+position = Vector2(112, 374)
 scale = Vector2(0.77502847, 2.4287083)
 amount = 100
 lifetime = 10.0

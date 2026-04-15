@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var player: RigidBody3D = $Player3D
+@onready var cam: Camera3D = $body/cam
 
 var wind_blowing = false
 
@@ -32,16 +33,7 @@ func _on_rock_area_entered(area: Area3D) -> void:
 
 func _on_rock_area_exited(area: Area3D) -> void:
 	Climb.can_climb = false
-	
-#func _blow_wind() -> void:
-	#if not Climb.right_attached and not Climb.left_attached:
-		#player.global_position.x -= 0.01
-		##player.global_position.y -= .1
-		#Climb.wind_blowing = true
-	#elif not Climb.has_grip:
-		#player.global_position.x -= 0.01
-		##player.global_position.y -= .1
-		#Climb.wind_blowing = true
+
 
 func apply_gravity() -> void:
 	pass
