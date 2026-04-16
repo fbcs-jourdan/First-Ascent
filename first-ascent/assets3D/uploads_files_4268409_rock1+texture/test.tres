@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b4ei17j60d6fj"]
+
+[ext_resource type="Texture2D" uid="uid://csdaeyj4njnsa" path="res://assets3D/uploads_files_4268409_rock1+texture/rock1_AO.png" id="1_4s6mu"]
+
+[resource]
+resource_name = "Default OBJ.002"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_4s6mu")
+emission_enabled = true

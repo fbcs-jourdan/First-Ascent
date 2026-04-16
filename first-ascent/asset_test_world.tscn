@@ -31,6 +31,8 @@ material = SubResource("StandardMaterial3D_rgcra")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v4bxi"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2ewsj"]
+
 [node name="World3D2" type="Node3D" unique_id=1237177132]
 script = ExtResource("1_2ewsj")
 
@@ -50,22 +52,25 @@ size = Vector3(50, 10, 50)
 material = SubResource("StandardMaterial3D_7tnf1")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=348336793]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 4.369873)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 4.021)
+visible = false
 use_collision = true
 size = Vector3(4.07, 50, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=335030201]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8398933, 25, 4.369873)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8398933, 25, 3.4719677)
+visible = false
 use_collision = true
 size = Vector3(4.07, 50, 1)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=71682526]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.865841, 25, 4.369873)
+visible = false
 use_collision = true
 size = Vector3(4.07, 50, 1)
 
 [node name="Player3D" parent="." unique_id=60074126 instance=ExtResource("3_fhgft")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.295366, 3.537274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.295366, 2.2064567)
 collision_layer = 2
 collision_mask = 5
 mass = 1.0
@@ -78,7 +83,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03186035, 50.1231, 1.770019
 shape = SubResource("BoxShape3D_rgcra")
 
 [node name="Rocks" type="Node3D" parent="." unique_id=1409433733]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013784409, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013784409, 0, -0.19647408)
 
 [node name="rock" type="Area3D" parent="Rocks" unique_id=1840547180]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 1.0140038, 4.8293953, 3.9844728)
@@ -129,7 +134,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
 shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="rock4" type="Area3D" parent="Rocks" unique_id=178065103]
-transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 0.83355737, 9.841375, 3.9844728)
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, -0.19477999, 9.841375, 3.9844728)
 collision_layer = 4
 collision_mask = 2
 
@@ -766,23 +771,340 @@ autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2021548395]
 
-[node name="uploads_files_4268409_rocklow" parent="." unique_id=381515193 instance=ExtResource("4_qsfxk")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 3.0330882, -0.66934013, 4.727092)
+[node name="Node3D" type="Node3D" parent="." unique_id=1124108040]
 
-[node name="uploads_files_4268409_rocklow2" parent="." unique_id=622619034 instance=ExtResource("4_qsfxk")]
+[node name="uploads_files_4268409_rocklow" parent="Node3D" unique_id=2104694181 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 3.0330882, -0.66934013, 4.727092)
+physics_material_override = SubResource("PhysicsMaterial_2ewsj")
+
+[node name="uploads_files_4268409_rocklow2" parent="Node3D" unique_id=776972699 instance=ExtResource("4_qsfxk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75166035, -0.6693406, 4.72001)
 
-[node name="uploads_files_4268409_rocklow3" parent="." unique_id=200375275 instance=ExtResource("4_qsfxk")]
+[node name="uploads_files_4268409_rocklow3" parent="Node3D" unique_id=803275893 instance=ExtResource("4_qsfxk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3608096, -0.6693392, 4.8222704)
 
-[node name="uploads_files_4268409_rocklow4" parent="." unique_id=195156882 instance=ExtResource("4_qsfxk")]
+[node name="uploads_files_4268409_rocklow4" parent="Node3D" unique_id=598575377 instance=ExtResource("4_qsfxk")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.1851294, -0.66934013, 4.727092)
 
-[node name="uploads_files_4268409_rocklow5" parent="." unique_id=374274117 instance=ExtResource("4_qsfxk")]
+[node name="uploads_files_4268409_rocklow5" parent="Node3D" unique_id=1645419790 instance=ExtResource("4_qsfxk")]
 transform = Transform3D(0.32391748, 4.891018e-08, -0.94608533, 1.509958e-07, -1, 0, -0.94608533, -1.4285492e-07, -0.32391748, -2.7617693, 6.3373446, 5.9415283)
 
-[node name="uploads_files_4268409_rocklow6" parent="." unique_id=1769527695 instance=ExtResource("4_qsfxk")]
+[node name="uploads_files_4268409_rocklow6" parent="Node3D" unique_id=282041021 instance=ExtResource("4_qsfxk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.857408, -0.6693392, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow7" parent="Node3D" unique_id=585530542 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 3.0330882, 3.3189487, 4.727092)
+
+[node name="uploads_files_4268409_rocklow8" parent="Node3D" unique_id=1378333997 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75166035, 3.3189483, 4.72001)
+
+[node name="uploads_files_4268409_rocklow9" parent="Node3D" unique_id=554242172 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3608096, 3.3189497, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow10" parent="Node3D" unique_id=416332234 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.1851294, 3.3189487, 4.727092)
+
+[node name="uploads_files_4268409_rocklow11" parent="Node3D" unique_id=481194437 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.32391748, 4.891018e-08, -0.94608533, 1.509958e-07, -1, 0, -0.94608533, -1.4285492e-07, -0.32391748, -2.7617693, 10.325634, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow12" parent="Node3D" unique_id=649857130 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.857408, 3.3189497, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow13" parent="Node3D" unique_id=59401584 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999692, -0.007853816, 1.5099116e-07, -0.007853816, -0.9999692, -1.1858933e-09, 1.509958e-07, 0, -1, -3.4111736, 13.226514, 4.727092)
+
+[node name="uploads_files_4268409_rocklow14" parent="Node3D" unique_id=445932950 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999692, -0.007853816, 0, 0.007853816, -0.9999692, 0, 0, 0, 1, 0.37345833, 13.19679, 4.72001)
+
+[node name="uploads_files_4268409_rocklow15" parent="Node3D" unique_id=891168446 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999692, -0.007853816, 0, 0.007853816, -0.9999692, 0, 0, 0, 1, -1.7389467, 13.213379, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow16" parent="Node3D" unique_id=165202359 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999692, -0.007853816, 1.5099116e-07, -0.007853816, -0.9999692, -1.1858933e-09, 1.509958e-07, 0, -1, -0.19305523, 13.201239, 4.727092)
+
+[node name="uploads_files_4268409_rocklow17" parent="Node3D" unique_id=1334442514 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.3239075, 0.007853767, 0.9460562, 0.0025438373, 0.9999692, -0.00743038, -0.94608533, -1.4285492e-07, -0.32391748, 2.3284762, 6.1745324, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow18" parent="Node3D" unique_id=1129260328 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999692, -0.007853816, 0, 0.007853816, -0.9999692, 0, 0, 0, 1, 1.4791718, 13.188104, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow19" parent="Node3D" unique_id=1952385455 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.99998045, -0.006248346, 1.5099285e-07, -0.006248346, -0.99998045, -9.434741e-10, 1.509958e-07, 0, -1, -3.380753, 24.08033, 4.727092)
+
+[node name="uploads_files_4268409_rocklow20" parent="Node3D" unique_id=1982920551 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, 0.40392137, 24.05668, 4.72001)
+
+[node name="uploads_files_4268409_rocklow21" parent="Node3D" unique_id=1779093341 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, -1.7085074, 24.06988, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow22" parent="Node3D" unique_id=1940079665 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.99998045, -0.006248346, 1.5099285e-07, -0.006248346, -0.99998045, -9.434741e-10, 1.509958e-07, 0, -1, -0.16259855, 24.06022, 4.727092)
+
+[node name="uploads_files_4268409_rocklow23" parent="Node3D" unique_id=868732395 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.32391116, 0.006248297, 0.94606686, 0.0020237975, 0.99998045, -0.0059114685, -0.94608533, -1.4285492e-07, -0.32391748, 2.370211, 17.037573, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow24" parent="Node3D" unique_id=1090105796 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, 1.5096473, 24.04977, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow25" parent="Node3D" unique_id=1541649349 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.99998045, -0.006248346, 1.5099285e-07, -0.006248346, -0.99998045, -9.434741e-10, 1.509958e-07, 0, -1, -3.4056733, 20.092117, 4.727092)
+
+[node name="uploads_files_4268409_rocklow26" parent="Node3D" unique_id=2099984151 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, 0.37900114, 20.06847, 4.72001)
+
+[node name="uploads_files_4268409_rocklow27" parent="Node3D" unique_id=1956314027 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, -1.7334276, 20.081669, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow28" parent="Node3D" unique_id=1813213889 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.99998045, -0.006248346, 1.5099285e-07, -0.006248346, -0.99998045, -9.434741e-10, 1.509958e-07, 0, -1, -0.18751876, 20.07201, 4.727092)
+
+[node name="uploads_files_4268409_rocklow29" parent="Node3D" unique_id=172791142 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.32391116, 0.006248297, 0.94606686, 0.0020237975, 0.99998045, -0.0059114685, -0.94608533, -1.4285492e-07, -0.32391748, 2.3452907, 13.049362, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow30" parent="Node3D" unique_id=1095955753 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, 1.484727, 20.06156, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow31" parent="Node3D" unique_id=453299706 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999006, 0.014101816, -1.5098081e-07, 0.014101816, 0.9999006, 2.129315e-09, 1.509958e-07, 0, -1, 2.9765565, 10.14448, 4.727092)
+
+[node name="uploads_files_4268409_rocklow32" parent="Node3D" unique_id=1206156889 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999006, 0.014101816, 0, -0.014101816, 0.9999006, 0, 0, 0, 1, -0.80781573, 10.197851, 4.72001)
+
+[node name="uploads_files_4268409_rocklow33" parent="Node3D" unique_id=460683974 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999006, 0.014101816, 0, -0.014101816, 0.9999006, 0, 0, 0, 1, 1.3044443, 10.168064, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow34" parent="Node3D" unique_id=567523124 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999006, 0.014101816, -1.5098081e-07, 0.014101816, 0.9999006, 2.129315e-09, 1.509958e-07, 0, -1, -0.24134107, 10.189863, 4.727092)
+
+[node name="uploads_files_4268409_rocklow35" parent="Node3D" unique_id=1496405564 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.32388526, -0.014101766, -0.9459912, -0.0045676725, -0.9999005, 0.013341521, -0.9460853, -1.4332055e-07, -0.32391745, -2.7189176, 17.23219, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow36" parent="Node3D" unique_id=333609635 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999006, 0.014101816, 0, -0.014101816, 0.9999006, 0, 0, 0, 1, -1.9134535, 10.213446, 4.8222704)
+
+[node name="Node3D2" type="Node3D" parent="." unique_id=954380638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.67812, 0)
+
+[node name="uploads_files_4268409_rocklow" parent="Node3D2" unique_id=712942942 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 3.0330882, -0.66934013, 4.727092)
+physics_material_override = SubResource("PhysicsMaterial_2ewsj")
+
+[node name="uploads_files_4268409_rocklow2" parent="Node3D2" unique_id=172255596 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75166035, -0.6693406, 4.72001)
+
+[node name="uploads_files_4268409_rocklow3" parent="Node3D2" unique_id=1214718573 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3608096, -0.6693392, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow4" parent="Node3D2" unique_id=796522985 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.1851294, -0.66934013, 4.727092)
+
+[node name="uploads_files_4268409_rocklow5" parent="Node3D2" unique_id=1266755587 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.32391748, 4.891018e-08, -0.94608533, 1.509958e-07, -1, 0, -0.94608533, -1.4285492e-07, -0.32391748, -2.7617693, 6.3373446, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow6" parent="Node3D2" unique_id=1356542330 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.857408, -0.6693392, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow7" parent="Node3D2" unique_id=1867140657 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 3.0330882, 3.3189487, 4.727092)
+
+[node name="uploads_files_4268409_rocklow8" parent="Node3D2" unique_id=691005264 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75166035, 3.3189483, 4.72001)
+
+[node name="uploads_files_4268409_rocklow9" parent="Node3D2" unique_id=1789977988 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3608096, 3.3189497, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow10" parent="Node3D2" unique_id=8762515 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.1851294, 3.3189487, 4.727092)
+
+[node name="uploads_files_4268409_rocklow11" parent="Node3D2" unique_id=440051891 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.32391748, 4.891018e-08, -0.94608533, 1.509958e-07, -1, 0, -0.94608533, -1.4285492e-07, -0.32391748, -2.7617693, 10.325634, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow12" parent="Node3D2" unique_id=386926832 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.857408, 3.3189497, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow13" parent="Node3D2" unique_id=2121011272 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999692, -0.007853816, 1.5099116e-07, -0.007853816, -0.9999692, -1.1858933e-09, 1.509958e-07, 0, -1, -3.4111736, 13.226514, 4.727092)
+
+[node name="uploads_files_4268409_rocklow14" parent="Node3D2" unique_id=1326554370 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999692, -0.007853816, 0, 0.007853816, -0.9999692, 0, 0, 0, 1, 0.37345833, 13.19679, 4.72001)
+
+[node name="uploads_files_4268409_rocklow15" parent="Node3D2" unique_id=680204975 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999692, -0.007853816, 0, 0.007853816, -0.9999692, 0, 0, 0, 1, -1.7389467, 13.213379, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow16" parent="Node3D2" unique_id=917694269 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999692, -0.007853816, 1.5099116e-07, -0.007853816, -0.9999692, -1.1858933e-09, 1.509958e-07, 0, -1, -0.19305523, 13.201239, 4.727092)
+
+[node name="uploads_files_4268409_rocklow17" parent="Node3D2" unique_id=1370771264 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.3239075, 0.007853767, 0.9460562, 0.0025438373, 0.9999692, -0.00743038, -0.94608533, -1.4285492e-07, -0.32391748, 2.3284762, 6.1745324, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow18" parent="Node3D2" unique_id=1225619303 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999692, -0.007853816, 0, 0.007853816, -0.9999692, 0, 0, 0, 1, 1.4791718, 13.188104, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow19" parent="Node3D2" unique_id=904494898 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.99998045, -0.006248346, 1.5099285e-07, -0.006248346, -0.99998045, -9.434741e-10, 1.509958e-07, 0, -1, -3.380753, 24.08033, 4.727092)
+
+[node name="uploads_files_4268409_rocklow20" parent="Node3D2" unique_id=1572842331 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, 0.40392137, 24.05668, 4.72001)
+
+[node name="uploads_files_4268409_rocklow21" parent="Node3D2" unique_id=547724681 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, -1.7085074, 24.06988, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow22" parent="Node3D2" unique_id=220548055 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.99998045, -0.006248346, 1.5099285e-07, -0.006248346, -0.99998045, -9.434741e-10, 1.509958e-07, 0, -1, -0.16259855, 24.06022, 4.727092)
+
+[node name="uploads_files_4268409_rocklow23" parent="Node3D2" unique_id=824567134 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.32391116, 0.006248297, 0.94606686, 0.0020237975, 0.99998045, -0.0059114685, -0.94608533, -1.4285492e-07, -0.32391748, 2.370211, 17.037573, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow24" parent="Node3D2" unique_id=1865369337 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, 1.5096473, 24.04977, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow25" parent="Node3D2" unique_id=767658889 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.99998045, -0.006248346, 1.5099285e-07, -0.006248346, -0.99998045, -9.434741e-10, 1.509958e-07, 0, -1, -3.4056733, 20.092117, 4.727092)
+
+[node name="uploads_files_4268409_rocklow26" parent="Node3D2" unique_id=534140360 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, 0.37900114, 20.06847, 4.72001)
+
+[node name="uploads_files_4268409_rocklow27" parent="Node3D2" unique_id=897668729 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, -1.7334276, 20.081669, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow28" parent="Node3D2" unique_id=2141476820 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.99998045, -0.006248346, 1.5099285e-07, -0.006248346, -0.99998045, -9.434741e-10, 1.509958e-07, 0, -1, -0.18751876, 20.07201, 4.727092)
+
+[node name="uploads_files_4268409_rocklow29" parent="Node3D2" unique_id=1313567947 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.32391116, 0.006248297, 0.94606686, 0.0020237975, 0.99998045, -0.0059114685, -0.94608533, -1.4285492e-07, -0.32391748, 2.3452907, 13.049362, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow30" parent="Node3D2" unique_id=545487254 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, 1.484727, 20.06156, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow31" parent="Node3D2" unique_id=1407356681 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999006, 0.014101816, -1.5098081e-07, 0.014101816, 0.9999006, 2.129315e-09, 1.509958e-07, 0, -1, 2.9765565, 10.14448, 4.727092)
+
+[node name="uploads_files_4268409_rocklow32" parent="Node3D2" unique_id=1448115813 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999006, 0.014101816, 0, -0.014101816, 0.9999006, 0, 0, 0, 1, -0.80781573, 10.197851, 4.72001)
+
+[node name="uploads_files_4268409_rocklow33" parent="Node3D2" unique_id=126857597 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999006, 0.014101816, 0, -0.014101816, 0.9999006, 0, 0, 0, 1, 1.3044443, 10.168064, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow34" parent="Node3D2" unique_id=2038705433 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999006, 0.014101816, -1.5098081e-07, 0.014101816, 0.9999006, 2.129315e-09, 1.509958e-07, 0, -1, -0.24134107, 10.189863, 4.727092)
+
+[node name="uploads_files_4268409_rocklow35" parent="Node3D2" unique_id=1226458654 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.32388526, -0.014101766, -0.9459912, -0.0045676725, -0.9999005, 0.013341521, -0.9460853, -1.4332055e-07, -0.32391745, -2.7189176, 17.23219, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow36" parent="Node3D2" unique_id=2086337087 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999006, 0.014101816, 0, -0.014101816, 0.9999006, 0, 0, 0, 1, -1.9134535, 10.213446, 4.8222704)
+
+[node name="Node3D3" type="Node3D" parent="." unique_id=899056588]
+transform = Transform3D(-0.99999535, 0.0030542882, 0, -0.0030542882, -0.99999535, 0, 0, 0, 1, 0, 50.377857, 0)
+
+[node name="uploads_files_4268409_rocklow" parent="Node3D3" unique_id=1333227309 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 3.0330882, -0.66934013, 4.727092)
+physics_material_override = SubResource("PhysicsMaterial_2ewsj")
+
+[node name="uploads_files_4268409_rocklow2" parent="Node3D3" unique_id=1113080989 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75166035, -0.6693406, 4.72001)
+
+[node name="uploads_files_4268409_rocklow3" parent="Node3D3" unique_id=1284136203 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3608096, -0.6693392, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow4" parent="Node3D3" unique_id=1276199801 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.1851294, -0.66934013, 4.727092)
+
+[node name="uploads_files_4268409_rocklow5" parent="Node3D3" unique_id=1931800712 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.32391748, 4.891018e-08, -0.94608533, 1.509958e-07, -1, 0, -0.94608533, -1.4285492e-07, -0.32391748, -2.7617693, 6.3373446, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow6" parent="Node3D3" unique_id=709576246 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.857408, -0.6693392, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow7" parent="Node3D3" unique_id=19083156 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 3.0330882, 3.3189487, 4.727092)
+
+[node name="uploads_files_4268409_rocklow8" parent="Node3D3" unique_id=1402913738 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75166035, 3.3189483, 4.72001)
+
+[node name="uploads_files_4268409_rocklow9" parent="Node3D3" unique_id=599206004 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3608096, 3.3189497, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow10" parent="Node3D3" unique_id=1634730710 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.1851294, 3.3189487, 4.727092)
+
+[node name="uploads_files_4268409_rocklow11" parent="Node3D3" unique_id=569405066 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.32391748, 4.891018e-08, -0.94608533, 1.509958e-07, -1, 0, -0.94608533, -1.4285492e-07, -0.32391748, -2.7617693, 10.325634, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow12" parent="Node3D3" unique_id=268252609 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.857408, 3.3189497, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow13" parent="Node3D3" unique_id=1531953041 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999692, -0.007853816, 1.5099116e-07, -0.007853816, -0.9999692, -1.1858933e-09, 1.509958e-07, 0, -1, -3.4111736, 13.226514, 4.727092)
+
+[node name="uploads_files_4268409_rocklow14" parent="Node3D3" unique_id=1487713848 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999692, -0.007853816, 0, 0.007853816, -0.9999692, 0, 0, 0, 1, 0.37345833, 13.19679, 4.72001)
+
+[node name="uploads_files_4268409_rocklow15" parent="Node3D3" unique_id=694206372 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999692, -0.007853816, 0, 0.007853816, -0.9999692, 0, 0, 0, 1, -1.7389467, 13.213379, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow16" parent="Node3D3" unique_id=1097476239 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999692, -0.007853816, 1.5099116e-07, -0.007853816, -0.9999692, -1.1858933e-09, 1.509958e-07, 0, -1, -0.19305523, 13.201239, 4.727092)
+
+[node name="uploads_files_4268409_rocklow17" parent="Node3D3" unique_id=1086984938 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.3239075, 0.007853767, 0.9460562, 0.0025438373, 0.9999692, -0.00743038, -0.94608533, -1.4285492e-07, -0.32391748, 2.3284762, 6.1745324, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow18" parent="Node3D3" unique_id=1800024081 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999692, -0.007853816, 0, 0.007853816, -0.9999692, 0, 0, 0, 1, 1.4791718, 13.188104, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow19" parent="Node3D3" unique_id=148893458 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.99998045, -0.006248346, 1.5099285e-07, -0.006248346, -0.99998045, -9.434741e-10, 1.509958e-07, 0, -1, -3.380753, 24.08033, 4.727092)
+
+[node name="uploads_files_4268409_rocklow20" parent="Node3D3" unique_id=315773267 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, 0.40392137, 24.05668, 4.72001)
+
+[node name="uploads_files_4268409_rocklow21" parent="Node3D3" unique_id=1118760605 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, -1.7085074, 24.06988, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow22" parent="Node3D3" unique_id=413679930 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.99998045, -0.006248346, 1.5099285e-07, -0.006248346, -0.99998045, -9.434741e-10, 1.509958e-07, 0, -1, -0.16259855, 24.06022, 4.727092)
+
+[node name="uploads_files_4268409_rocklow23" parent="Node3D3" unique_id=1263009380 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.32391116, 0.006248297, 0.94606686, 0.0020237975, 0.99998045, -0.0059114685, -0.94608533, -1.4285492e-07, -0.32391748, 2.370211, 17.037573, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow24" parent="Node3D3" unique_id=1029705696 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, 1.5096473, 24.04977, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow25" parent="Node3D3" unique_id=1184286617 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.99998045, -0.006248346, 1.5099285e-07, -0.006248346, -0.99998045, -9.434741e-10, 1.509958e-07, 0, -1, -3.4056733, 20.092117, 4.727092)
+
+[node name="uploads_files_4268409_rocklow26" parent="Node3D3" unique_id=1455158252 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, 0.37900114, 20.06847, 4.72001)
+
+[node name="uploads_files_4268409_rocklow27" parent="Node3D3" unique_id=524101037 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, -1.7334276, 20.081669, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow28" parent="Node3D3" unique_id=867877902 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.99998045, -0.006248346, 1.5099285e-07, -0.006248346, -0.99998045, -9.434741e-10, 1.509958e-07, 0, -1, -0.18751876, 20.07201, 4.727092)
+
+[node name="uploads_files_4268409_rocklow29" parent="Node3D3" unique_id=472490453 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.32391116, 0.006248297, 0.94606686, 0.0020237975, 0.99998045, -0.0059114685, -0.94608533, -1.4285492e-07, -0.32391748, 2.3452907, 13.049362, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow30" parent="Node3D3" unique_id=1084652977 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.99998045, -0.006248346, 0, 0.006248346, -0.99998045, 0, 0, 0, 1, 1.484727, 20.06156, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow31" parent="Node3D3" unique_id=1442498681 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999006, 0.014101816, -1.5098081e-07, 0.014101816, 0.9999006, 2.129315e-09, 1.509958e-07, 0, -1, 2.9765565, 10.14448, 4.727092)
+
+[node name="uploads_files_4268409_rocklow32" parent="Node3D3" unique_id=847025296 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999006, 0.014101816, 0, -0.014101816, 0.9999006, 0, 0, 0, 1, -0.80781573, 10.197851, 4.72001)
+
+[node name="uploads_files_4268409_rocklow33" parent="Node3D3" unique_id=1332762501 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999006, 0.014101816, 0, -0.014101816, 0.9999006, 0, 0, 0, 1, 1.3044443, 10.168064, 4.8222704)
+
+[node name="uploads_files_4268409_rocklow34" parent="Node3D3" unique_id=1911161558 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(-0.9999006, 0.014101816, -1.5098081e-07, 0.014101816, 0.9999006, 2.129315e-09, 1.509958e-07, 0, -1, -0.24134107, 10.189863, 4.727092)
+
+[node name="uploads_files_4268409_rocklow35" parent="Node3D3" unique_id=1644867243 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.32388526, -0.014101766, -0.9459912, -0.0045676725, -0.9999005, 0.013341521, -0.9460853, -1.4332055e-07, -0.32391745, -2.7189176, 17.23219, 5.9415283)
+
+[node name="uploads_files_4268409_rocklow36" parent="Node3D3" unique_id=1285661594 instance=ExtResource("4_qsfxk")]
+transform = Transform3D(0.9999006, 0.014101816, 0, -0.014101816, 0.9999006, 0, 0, 0, 1, -1.9134535, 10.213446, 4.8222704)
 
 [connection signal="body_entered" from="ending" to="." method="_on_ending_body_entered"]
 [connection signal="area_entered" from="Rocks/rock" to="." method="_on_rock_area_entered"]
