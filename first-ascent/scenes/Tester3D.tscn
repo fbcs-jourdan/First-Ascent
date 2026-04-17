@@ -246,7 +246,7 @@ transform = Transform3D(1.0000001, 9.313226e-10, 0, -9.313226e-10, 1.0000001, 0,
 mesh = SubResource("BoxMesh_rgcra")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks/rock14" unique_id=1858792345]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9272213)
+transform = Transform3D(1.0000001, 9.313226e-10, 0, -9.313226e-10, 1.0000001, 0, 0, 0, 1, -0.8074352, -0.008766174, -0.92722034)
 shape = SubResource("BoxShape3D_v4bxi")
 
 [node name="rock15" type="Area3D" parent="Rocks" unique_id=275952831]

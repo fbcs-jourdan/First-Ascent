@@ -62,7 +62,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	right_bar.value = int(right_grip_strength)
 	left_bar.value = int(left_grip_strength)
-	
+	body.global_position.x = (right.global_position.x + left.global_position.x) * 0.4
 	if Climb.wind_blowing:
 		update_limits()
 		
