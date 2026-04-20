@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://vhhhfr5ealxi" path="res://scripts/tester_3d.gd" id="1_h23n6"]
 [ext_resource type="PackedScene" uid="uid://ga6ja1jjtls0" path="res://scenes/player_3d.tscn" id="2_uwxec"]
 [ext_resource type="PackedScene" uid="uid://oskcbpuofwro" path="res://scenes/rock_spawner.tscn" id="3_uwxec"]
+[ext_resource type="PackedScene" uid="uid://dra1qg8n71jy4" path="res://scenes/vfx.tscn" id="4_1pn4d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vk1u"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -1402,6 +1403,8 @@ shape = SubResource("BoxShape3D_v4bxi")
 autostart = true
 
 [node name="RockSpawner" parent="." unique_id=1194020508 instance=ExtResource("3_uwxec")]
+
+[node name="VFX" parent="." unique_id=171040713 instance=ExtResource("4_1pn4d")]
 
 [connection signal="body_entered" from="ending" to="." method="_on_ending_body_entered"]
 [connection signal="area_entered" from="Rocks/rock" to="." method="_on_rock_area_entered"]
