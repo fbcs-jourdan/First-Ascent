@@ -1,7 +1,7 @@
 extends RigidBody3D
+@onready var left: MeshInstance3D = $left
 
 @export var right: MeshInstance3D
-@export var left: MeshInstance3D 
 @export var move_radius := 0.5
 @export var pull_strength := 5
 @export var wall_normal := Vector3.FORWARD # normal pointing OUT of wall
@@ -60,9 +60,11 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	right_bar.value = int(right_grip_strength)
+	#right_bar.value = int(right_grip_strength)
 	left_bar.value = int(left_grip_strength)
 	body.global_position.x = (right.global_position.x + left.global_position.x) * 0.4
+	var l_material = left.get_active_material(0)
+	var r_material = right.get_active_material(0)
 	if Climb.wind_blowing:
 		update_limits()
 		
@@ -96,9 +98,15 @@ func _process(delta: float) -> void:
 	if climbing:
 		if right_selected and Climb.left_attached:
 			left_grip_strength -= 20 * delta
+			l_material.albedo_color = Color(1, 0, 0)
+		else: 
+			l_material.albedo_color = Color(1, 1, 1)
 		if left_selected and Climb.right_attached:
 			right_grip_strength -= 20 * delta
-		if Input.is_action_just_pressed("switch_left") and Climb.can_climb:
+			r_material.albedo_color = Color(1, 0, 0)
+		else:
+			r_material.albedo_color = Color(1, 1, 1)
+		if Input.is_action_just_pressed("switch_right") and Climb.can_climb:
 			right_selected = false
 			left_selected = true
 			Climb.right_attached = true
@@ -107,7 +115,7 @@ func _process(delta: float) -> void:
 			update_limits()
 			body.global_position.x = (right.global_position.x + left.global_position.x) * .5
 
-		if Input.is_action_just_pressed("switch_right") and Climb.can_climb:
+		if Input.is_action_just_pressed("switch_left") and Climb.can_climb:
 			right_selected = true
 			left_selected = false
 			Climb.right_attached = false
