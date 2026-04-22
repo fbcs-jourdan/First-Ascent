@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://vhhhfr5ealxi" path="res://scripts/tester_3d.gd" id="1_kfhiw"]
 [ext_resource type="PackedScene" uid="uid://ga6ja1jjtls0" path="res://scenes/player_3d.tscn" id="2_25cvy"]
 [ext_resource type="PackedScene" uid="uid://dra1qg8n71jy4" path="res://scenes/vfx.tscn" id="3_25cvy"]
+[ext_resource type="AudioStream" uid="uid://bv0nw7h0clykb" path="res://assets2D/sound/wind_ambience.mp3" id="4_2w2ap"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vk1u"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -764,6 +765,11 @@ shape = SubResource("BoxShape3D_v4bxi")
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2021548395]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=713352056]
+stream = ExtResource("4_2w2ap")
+volume_db = -45.0
+autoplay = true
 
 [connection signal="body_entered" from="ending" to="." method="_on_ending_body_entered"]
 [connection signal="area_entered" from="Rocks/rock" to="." method="_on_rock_area_entered"]
