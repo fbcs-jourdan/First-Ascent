@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://b4ei17j60d6fj"]
 
-[ext_resource type="Texture2D" uid="uid://csdaeyj4njnsa" path="res://assets3D/uploads_files_4268409_rock1+texture/rock1_AO.png" id="1_4s6mu"]
+[ext_resource type="Texture2D" uid="uid://bm38tcipkyh3g" path="res://assets3D/uploads_files_4268409_rock1+texture/rock1_Albedo.png" id="1_4s6mu"]
 
 [resource]
 resource_name = "Default OBJ.002"

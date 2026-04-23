@@ -41,8 +41,8 @@ _subresources={
 "materials": {
 "Default OBJ.002": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets3D/uploads_files_4268409_rock1+texture/Default OBJ.002.tres",
-"use_external/path": "uid://dvqc76i7plvmf"
+"use_external/fallback_path": "res://assets3D/uploads_files_4268409_rock1+texture/test.tres",
+"use_external/path": "uid://b4ei17j60d6fj"
 }
 },
 "nodes": {
