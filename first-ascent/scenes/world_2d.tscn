@@ -1626,7 +1626,7 @@ sources/0 = SubResource("TileSetAtlasSource_g0jlf")
 size = Vector2(127, 79)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ieres"]
-size = Vector2(100, 37)
+size = Vector2(100, 114)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ttry"]
 
@@ -1634,22 +1634,20 @@ size = Vector2(100, 37)
 script = ExtResource("1_ieres")
 
 [node name="friend" type="Area2D" parent="." unique_id=387819146]
-visible = false
 position = Vector2(173, -5)
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="friend" unique_id=363035679]
-position = Vector2(504, 369.5)
+position = Vector2(493, 371)
 shape = SubResource("RectangleShape2D_vydw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="friend" unique_id=277041951]
-position = Vector2(503.5, 347)
-scale = Vector2(0.44531256, 0.18750022)
+position = Vector2(491, 353)
+scale = Vector2(0.18, 0.076)
 texture = ExtResource("4_6cuhj")
 
 [node name="friend2" type="Area2D" parent="." unique_id=1115076879]
-visible = false
 position = Vector2(9, -5)
 collision_layer = 4
 collision_mask = 2
@@ -1659,23 +1657,22 @@ position = Vector2(503, 369)
 shape = SubResource("RectangleShape2D_vydw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="friend2" unique_id=570417748]
-position = Vector2(503.5, 347)
-scale = Vector2(0.44531256, 0.18750022)
+position = Vector2(503, 351)
+scale = Vector2(0.16, 0.068)
 texture = ExtResource("4_6cuhj")
 
 [node name="friend3" type="Area2D" parent="." unique_id=1039365419]
-visible = false
 position = Vector2(-177, -5)
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="friend3" unique_id=1566500004]
-position = Vector2(503, 369)
+position = Vector2(490, 369)
 shape = SubResource("RectangleShape2D_vydw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="friend3" unique_id=1214622317]
-position = Vector2(503.5, 347)
-scale = Vector2(0.44531256, 0.18750022)
+position = Vector2(490.00003, 352)
+scale = Vector2(0.16, 0.068)
 texture = ExtResource("4_6cuhj")
 
 [node name="player" parent="." unique_id=2134198571 instance=ExtResource("1_pneyj")]
@@ -1734,7 +1731,7 @@ text = "mountain"
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Label/mountain" unique_id=31821609]
-position = Vector2(40, 8.5)
+position = Vector2(40, 47)
 shape = SubResource("RectangleShape2D_ieres")
 
 [node name="Actionable" parent="." unique_id=460699801 instance=ExtResource("5_vydw8")]
