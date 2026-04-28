@@ -50,11 +50,13 @@ mesh = SubResource("SphereMesh_52vux")
 
 [node name="Node3D" type="Node3D" parent="right" unique_id=1149170085]
 transform = Transform3D(2.9411764, 0, 0, 0, 2.9411764, 0, 0, 0, 6.6666665, -0.12045264, -4.94099, 0)
+visible = false
 
 [node name="SubViewport" type="SubViewport" parent="right/Node3D" unique_id=336905048]
 size = Vector2i(80, 27)
 
 [node name="right_bar" type="ProgressBar" parent="right/Node3D/SubViewport" unique_id=1427779710]
+visible = false
 offset_right = 80.0
 offset_bottom = 27.0
 value = 50.0
@@ -110,11 +112,13 @@ shape = SubResource("SphereShape3D_52vux")
 
 [node name="Node3D2" type="Node3D" parent="left" unique_id=2005719088]
 transform = Transform3D(2.9411764, 0, 0, 0, 2.9411764, 0, 0, 0, 6.6666665, 0.055000067, -4.8981524, 0)
+visible = false
 
 [node name="SubViewport" type="SubViewport" parent="left/Node3D2" unique_id=1366724222]
 size = Vector2i(80, 27)
 
 [node name="left_bar" type="ProgressBar" parent="left/Node3D2/SubViewport" unique_id=1872057627]
+visible = false
 offset_right = 4.0
 offset_bottom = 27.0
 
