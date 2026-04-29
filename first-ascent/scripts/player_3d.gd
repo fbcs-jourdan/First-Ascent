@@ -2,7 +2,12 @@ extends RigidBody3D
 @onready var left: MeshInstance3D = $left
 @onready var sfx: AudioStreamPlayer = $SFX
 
-@export var right: MeshInstance3D
+@onready var right_hand: Node3D = $right/Sketchfab_Scene
+@onready var left_hand: Node3D = $left/Sketchfab_Scene
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+@onready var right: MeshInstance3D = $right
 @export var move_radius := 0.5
 @export var pull_strength := 5
 @export var wall_normal := Vector3.FORWARD # normal pointing OUT of wall
@@ -35,7 +40,7 @@ func _physics_process(_delta):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	#right_hand.play_grab()
 	right_limit = body.global_position.x - 1.5
 	left_limit = body.global_position.x + 1.5
 	upper_limit = body.global_position.y + 3
@@ -72,7 +77,7 @@ func _process(delta: float) -> void:
 	print("left hand attached: " + str(Climb.left_attached))
 	if not Climb.right_attached:
 		right_grip_strength += 5 * delta
-	elif not Climb.left_attached:
+	if not Climb.left_attached:
 		left_grip_strength += 5 * delta
 	if right_grip_strength < 0:
 		print("MY NAME IS MATTHEW AND YOU cant use ur right hand")
@@ -117,7 +122,10 @@ func _process(delta: float) -> void:
 			update_limits()
 			sfx.play_sfx("grab")
 			body.global_position.x = (right.global_position.x + left.global_position.x) * .5
-
+			right_hand.play_grab()
+			left_hand.play_release()
+			
+			
 		if Input.is_action_just_pressed("switch_left") and Climb.can_climb:
 			right_selected = true
 			left_selected = false
@@ -127,6 +135,9 @@ func _process(delta: float) -> void:
 			update_limits()
 			body.global_position.x = (right.global_position.x + left.global_position.x) * .5
 			sfx.play_sfx("grab")
+			right_hand.play_release()
+			left_hand.play_grab()
+			
 		var mouse_pos = get_viewport().get_mouse_position()
 		
 		var rayStart : Vector3 = cam.project_ray_origin(mouse_pos)

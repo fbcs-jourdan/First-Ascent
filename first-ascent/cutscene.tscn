@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cj8ca2oxxa7xs" path="res://cutscene.gd" id="1_ix241"]
 [ext_resource type="PackedScene" uid="uid://cstd1si0potrp" path="res://assets3D/uploads_files_4268409_rock1+texture/uploads_files_4268409_rocklow.fbx" id="2_ix241"]
+[ext_resource type="PackedScene" uid="uid://om6mf6t620vt" path="res://scenes/ hand.tscn" id="3_bl24s"]
+[ext_resource type="PackedScene" uid="uid://byanqatbdkcqb" path="res://scenes/left_hand.tscn" id="4_u4yv4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vk1u"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -1853,16 +1855,22 @@ transform = Transform3D(0.32388526, -0.014101766, -0.9459912, -0.0045676725, -0.
 transform = Transform3D(0.9999006, 0.014101816, 0, -0.014101816, 0.9999006, 0, 0, 0, 1, -1.9134535, 10.213446, 4.8222704)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=954836397]
-transform = Transform3D(-1, 2.719693e-09, 1.5085716e-07, -3.7447303e-09, 0.99908185, -0.042834718, -1.5083525e-07, -0.042834718, -0.9990819, 0, 2.3167439, 2.679267)
+transform = Transform3D(-1, 2.719693e-09, 1.5085716e-07, -3.7447303e-09, 0.9990818, -0.042834718, -1.5083525e-07, -0.042834714, -0.99908185, 0, 2.3167439, 2.679267)
 fov = 105.5
 
 [node name="right hand" type="MeshInstance3D" parent="." unique_id=1591415302]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.7229986, 26.565351, 3.8903596)
 mesh = SubResource("SphereMesh_ye7fo")
 
+[node name="Sketchfab_Scene" parent="right hand" unique_id=295825598 instance=ExtResource("3_bl24s")]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 2.409995, -86.3523, -16.01971)
+
 [node name="left hand" type="MeshInstance3D" parent="." unique_id=548098022]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.794926, 25.820791, 3.8603442)
 mesh = SubResource("SphereMesh_ye7fo")
+
+[node name="Sketchfab_Scene2" parent="left hand" unique_id=1493238961 instance=ExtResource("4_u4yv4")]
+transform = Transform3D(1.9106857e-15, -4.371139e-08, -1, -1, -4.371139e-08, -1.8822955e-22, -4.371139e-08, 1, -4.371139e-08, -2.649753, -83.8693, -12.867813)
 
 [connection signal="area_entered" from="Rocks/rock" to="." method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rocks/rock" to="." method="_on_rock_area_exited"]

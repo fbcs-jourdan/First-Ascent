@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://ga6ja1jjtls0"]
 
 [ext_resource type="Script" uid="uid://cr2m6q7mpwc1b" path="res://scripts/player_3d.gd" id="1_52vux"]
-[ext_resource type="PackedScene" uid="uid://om6mf6t620vt" path="res://scenes/ hand.tscn" id="2_2djwe"]
+[ext_resource type="PackedScene" uid="uid://ce6bx0q7bnpve" path="res://assets3D/the_hand.glb" id="2_2djwe"]
 [ext_resource type="PackedScene" uid="uid://bl35y2xbb8m40" path="res://scenes/sfx.tscn" id="2_reoop"]
-[ext_resource type="PackedScene" uid="uid://byanqatbdkcqb" path="res://scenes/left_hand.tscn" id="3_yevqy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rwvw1"]
 
@@ -49,8 +48,8 @@ current = true
 transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.062, -0.793, 1.139, 0)
 mesh = SubResource("SphereMesh_2djwe")
 
-[node name="Sketchfab_Scene" parent="right" unique_id=295825598 instance=ExtResource("2_2djwe")]
-transform = Transform3D(5.1626717e-15, 3.1537766e-07, -2.75, 2.702, -3.1537766e-07, 0, 1.1810817e-07, 7.215, 1.2020632e-07, 0, 0.65965843, -0.91555387)
+[node name="Sketchfab_Scene" parent="right" unique_id=1602618617 instance=ExtResource("2_2djwe")]
+transform = Transform3D(5.1626717e-15, 3.1537766e-07, -2.524, 2.702, -3.1537766e-07, 0, -1.1810817e-07, -7.2149997, -1.1032754e-07, 0, 0.65965843, -0.91555387)
 
 [node name="Node3D" type="Node3D" parent="right" unique_id=1149170085]
 transform = Transform3D(2.9411764, 0, 0, 0, 2.9411764, 0, 0, 0, 6.6666665, -0.12045264, -4.94099, 0)
@@ -92,11 +91,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43790722, -0.030517578)
 shape = SubResource("BoxShape3D_52vux")
 
 [node name="left" type="MeshInstance3D" parent="." unique_id=1787077396]
-transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.062, 0.7930831, 1.1386967, 0)
+transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.15, 0.7930831, 1.1386967, 0)
 mesh = SubResource("SphereMesh_reoop")
-
-[node name="Sketchfab_Scene" parent="left" unique_id=1493238961 instance=ExtResource("3_yevqy")]
-transform = Transform3D(5.15885e-15, -3.14722e-07, -2.7000003, -2.6999996, -3.14722e-07, 0, -1.1802073e-07, 7.2000003, -1.1802076e-07, 0, 0.65999985, 0)
 
 [node name="LeftGripLabel" type="Label3D" parent="left" unique_id=203944288]
 transform = Transform3D(-2.9411764, 0, -2.571258e-07, 0, 2.9411764, 0, 5.828185e-07, 0, -6.6666665, 0.33109736, 5.479207, 0)

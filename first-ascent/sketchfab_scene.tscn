@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://clcisif3yaqx2"]
+
+[ext_resource type="PackedScene" uid="uid://ce6bx0q7bnpve" path="res://assets3D/the_hand.glb" id="1_r57si"]
+[ext_resource type="Script" uid="uid://crjk2g7v6wov7" path="res://sketchfab_scene.gd" id="2_dhub7"]
+
+[node name="Sketchfab_Scene" unique_id=1928874225 instance=ExtResource("1_r57si")]
+script = ExtResource("2_dhub7")
+
+[node name="Skeleton3D" parent="Sketchfab_model/b760f5edbef04eacb67c05f90ae95fb8_fbx/Object_2/RootNode/Object_4" parent_id_path=PackedInt32Array(300388398) index="0" unique_id=1655198929]
+bones/5/rotation = Quaternion(0, 0, 0.09918902, 0.9950686)
+bones/13/rotation = Quaternion(0, 0, -0.08524015, 0.9963604)
+bones/21/rotation = Quaternion(-0.32504404, 0.050933216, 0.31344995, 0.89078695)
