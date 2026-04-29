@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://dgrjox1qexsgt" path="res://dialogue/matthew.dialogue" id="6_3ttry"]
 [ext_resource type="Texture2D" uid="uid://dapq4iekig8ue" path="res://assets2D/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/exterior.png" id="6_43pkk"]
 [ext_resource type="Texture2D" uid="uid://bhnad6yju572y" path="res://assets2D/Pixel 16 v2 village free/Pixel 16 v2 village free/Pixel 16 v2 village free.png" id="7_4yy33"]
+[ext_resource type="Texture2D" uid="uid://ciexbk1h6p1g5" path="res://assets2D/exclamation.png" id="10_nkg8n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vydw8"]
 size = Vector2(54, 65)
@@ -1740,6 +1741,21 @@ dialogue_resource = ExtResource("6_3ttry")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable" unique_id=1375457580]
 shape = SubResource("CircleShape2D_3ttry")
+
+[node name="exclamation1" type="Sprite2D" parent="." unique_id=1686359140]
+position = Vector2(663, 324)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("10_nkg8n")
+
+[node name="exclamation2" type="Sprite2D" parent="." unique_id=1328775056]
+position = Vector2(513, 323)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("10_nkg8n")
+
+[node name="exclamation3" type="Sprite2D" parent="." unique_id=1725700531]
+position = Vector2(314, 321)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("10_nkg8n")
 
 [connection signal="body_entered" from="friend" to="." method="_on_friend_body_entered"]
 [connection signal="body_exited" from="friend" to="." method="_on_friend_body_exited"]

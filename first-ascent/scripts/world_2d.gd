@@ -1,5 +1,10 @@
 extends Node2D
 
+@onready var exclamation_1: Sprite2D = $exclamation1
+@onready var exclamation_2: Sprite2D = $exclamation2
+@onready var exclamation_3: Sprite2D = $exclamation3
+
+var exclamations = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,7 +36,7 @@ func _on_friend_body_entered(body: Node2D) -> void:
 
 func _on_friend_body_exited(body: Node2D) -> void:
 	Climb.can_move = true
-
+	
 
 func _on_friend_2_body_exited(body: Node2D) -> void:
 	Climb.can_move = true
@@ -43,4 +48,3 @@ func _on_friend_3_body_exited(body: Node2D) -> void:
 func _on_dialogue_ended(t):
 	print(t)
 	Climb.can_move = true
-	
