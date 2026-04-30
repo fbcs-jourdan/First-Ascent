@@ -141,6 +141,9 @@ _data = {
 
 [sub_resource type="SphereMesh" id="SphereMesh_ye7fo"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_bl24s"]
+font_size = 134
+
 [node name="World3D2" type="Node3D" unique_id=1237177132]
 script = ExtResource("1_ix241")
 
@@ -1855,7 +1858,7 @@ transform = Transform3D(0.32388526, -0.014101766, -0.9459912, -0.0045676725, -0.
 transform = Transform3D(0.9999006, 0.014101816, 0, -0.014101816, 0.9999006, 0, 0, 0, 1, -1.9134535, 10.213446, 4.8222704)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=954836397]
-transform = Transform3D(-1, 2.719693e-09, 1.5085716e-07, -3.7447303e-09, 0.9990818, -0.042834718, -1.5083525e-07, -0.042834714, -0.99908185, 0, 2.3167439, 2.679267)
+transform = Transform3D(-1, 2.7196927e-09, 1.5085715e-07, -3.7447303e-09, 0.99908173, -0.042834714, -1.5083525e-07, -0.04283471, -0.9990818, 0, 2.3167439, 2.679267)
 fov = 105.5
 
 [node name="right hand" type="MeshInstance3D" parent="." unique_id=1591415302]
@@ -1871,6 +1874,31 @@ mesh = SubResource("SphereMesh_ye7fo")
 
 [node name="Sketchfab_Scene2" parent="left hand" unique_id=1493238961 instance=ExtResource("4_u4yv4")]
 transform = Transform3D(1.9106857e-15, -4.371139e-08, -1, -1, -4.371139e-08, -1.8822955e-22, -4.371139e-08, 1, -4.371139e-08, -2.649753, -83.8693, -12.867813)
+
+[node name="Retry" type="Control" parent="." unique_id=1526719263]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1607.0
+offset_bottom = 911.0
+
+[node name="Button" type="Button" parent="Retry" unique_id=787801792]
+layout_mode = 0
+offset_left = 654.0
+offset_top = 421.0
+offset_right = 1117.0
+offset_bottom = 680.0
+text = "
+"
+
+[node name="Label" type="Label" parent="Retry/Button" unique_id=86015923]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 21.0
+offset_right = 544.0
+offset_bottom = 278.0
+text = "retry"
+label_settings = SubResource("LabelSettings_bl24s")
 
 [connection signal="area_entered" from="Rocks/rock" to="." method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rocks/rock" to="." method="_on_rock_area_exited"]
@@ -1982,3 +2010,4 @@ transform = Transform3D(1.9106857e-15, -4.371139e-08, -1, -1, -4.371139e-08, -1.
 [connection signal="area_exited" from="Rocks4/rock27" to="." method="_on_rock_area_exited"]
 [connection signal="area_entered" from="Rocks4/rock28" to="." method="_on_rock_area_entered"]
 [connection signal="area_exited" from="Rocks4/rock28" to="." method="_on_rock_area_exited"]
+[connection signal="pressed" from="Retry/Button" to="." method="_on_button_pressed"]

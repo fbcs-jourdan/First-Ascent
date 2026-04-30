@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ciexbk1h6p1g5" path="res://assets2D/exclamation.png" id="10_nkg8n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vydw8"]
-size = Vector2(54, 65)
+size = Vector2(13, 38.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43pkk"]
 texture = ExtResource("5_ju7hw")
@@ -1640,7 +1640,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="friend" unique_id=363035679]
-position = Vector2(490, 370)
+position = Vector2(490.5, 356.75)
 shape = SubResource("RectangleShape2D_vydw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="friend" unique_id=277041951]
@@ -1654,7 +1654,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="friend2" unique_id=649389914]
-position = Vector2(503, 369)
+position = Vector2(503, 353)
 shape = SubResource("RectangleShape2D_vydw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="friend2" unique_id=570417748]
@@ -1668,7 +1668,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="friend3" unique_id=1566500004]
-position = Vector2(490, 369)
+position = Vector2(490, 352)
 shape = SubResource("RectangleShape2D_vydw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="friend3" unique_id=1214622317]
@@ -1677,6 +1677,7 @@ position = Vector2(490, 344)
 texture = ExtResource("2_4yy33")
 
 [node name="player" parent="." unique_id=2134198571 instance=ExtResource("1_pneyj")]
+z_index = 366
 position = Vector2(890, 368)
 collision_layer = 2
 collision_mask = 5
