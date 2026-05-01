@@ -35,6 +35,7 @@ script = ExtResource("1_52vux")
 
 [node name="body" type="MeshInstance3D" parent="." unique_id=9787558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.28999996, 0, 0, 0)
+layers = 16
 mesh = SubResource("CapsuleMesh_rwvw1")
 
 [node name="head" type="MeshInstance3D" parent="body" unique_id=705407804]
@@ -97,6 +98,11 @@ mesh = SubResource("SphereMesh_reoop")
 
 [node name="Sketchfab_Scene" parent="left" unique_id=1493238961 instance=ExtResource("3_yevqy")]
 transform = Transform3D(5.15885e-15, -3.14722e-07, -2.7000003, -2.6999996, -3.14722e-07, 0, -1.1802073e-07, 7.2000003, -1.1802076e-07, 0, 0.65999985, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="left/Sketchfab_Scene" unique_id=1141505665]
+transform = Transform3D(2.6455033, -2.0990811e-07, 2.0718589e-14, 1.7763568e-14, 2.2401433, -1.7774471e-07, 1.2705494e-21, 0, 2.6455023, 0, 0, 0)
+omni_range = 0.383
+omni_attenuation = -0.236
 
 [node name="LeftGripLabel" type="Label3D" parent="left" unique_id=203944288]
 transform = Transform3D(-2.9411764, 0, -2.571258e-07, 0, 2.9411764, 0, 5.828185e-07, 0, -6.6666665, 0.33109736, 5.479207, 0)

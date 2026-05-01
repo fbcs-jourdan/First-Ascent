@@ -11,8 +11,8 @@ extends RigidBody3D
 @export var move_radius := 0.5
 @export var pull_strength := 5
 @export var wall_normal := Vector3.FORWARD # normal pointing OUT of wall
-@export var right_grip_strength = 100
-@export var left_grip_strength = 100
+var right_grip_strength = clamp(100, 0, 150)
+var left_grip_strength = clamp(100, 0, 150)
 @onready var right_label: Label3D = $right/RightGripLabel
 @onready var left_label: Label3D = $left/LeftGripLabel
 @onready var right_bar: ProgressBar = $right/Node3D/SubViewport/right_bar
@@ -32,6 +32,7 @@ var right_selected := true
 var left_selected = false
 var right_center
 var left_center
+
 
 
 func _physics_process(_delta):
@@ -76,13 +77,14 @@ func _process(delta: float) -> void:
 	print("right hand attached: " + str(Climb.right_attached))
 	print("left hand attached: " + str(Climb.left_attached))
 	if not Climb.right_attached:
-		right_grip_strength += 5 * delta
+		right_grip_strength = clamp(right_grip_strength+1*delta,0, 150)
 	if not Climb.left_attached:
-		left_grip_strength += 5 * delta
+		left_grip_strength = clamp(left_grip_strength+1*delta,0, 150)
 	if right_grip_strength < 0:
 		print("MY NAME IS MATTHEW AND YOU cant use ur right hand")
 		if left_grip_strength < 0:
 			Climb.has_grip = false
+		
 	if left_grip_strength < 0:
 		print("MY NAME IS MATTHEW AND YOU cant use ur left hand")
 		if right_grip_strength < 0:
@@ -100,16 +102,16 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_pressed("climb") and climbing:
 		climbing = false
 	if not climbing:
-		left_grip_strength += 10 * delta
-		right_grip_strength += 10 * delta
+		left_grip_strength = clamp(left_grip_strength+10*delta,0, 150)
+		right_grip_strength = clamp(right_grip_strength+10*delta,0, 150)
 	if climbing:
 		if right_selected and Climb.left_attached:
-			left_grip_strength -= 20 * delta
+			left_grip_strength = clamp(left_grip_strength-20*delta,0, 150)
 			l_material.albedo_color = Color(1, 0, 0)
 		else: 
 			l_material.albedo_color = Color(1, 1, 1)
 		if left_selected and Climb.right_attached:
-			right_grip_strength -= 20 * delta
+			right_grip_strength = clamp(right_grip_strength-20*delta,0, 150)
 			r_material.albedo_color = Color(1, 0, 0)
 		else:
 			r_material.albedo_color = Color(1, 1, 1)
@@ -166,7 +168,7 @@ func _process(delta: float) -> void:
 				left.global_position.x = body.global_position.x
 			if left.global_position.y > upper_limit:
 				left.global_position.y = upper_limit
-	if right_grip_strength < 0 and left_grip_strength < 0: 
+	if int(right_grip_strength) == 0 and int(left_grip_strength) == 0: 
 		get_tree().change_scene_to_file("res://cutscene.tscn")
 func _warp_mouse_to_hand(new_hand: MeshInstance3D) -> void:
 	var screen_pos: Vector2 = cam.unproject_position(new_hand.global_transform.origin)

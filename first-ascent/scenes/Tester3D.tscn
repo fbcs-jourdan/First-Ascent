@@ -73,15 +73,10 @@ use_collision = true
 size = Vector3(4.07, 50, 1)
 
 [node name="Player3D" parent="." unique_id=60074126 instance=ExtResource("1_7tnf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.295366, 3.537274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7705071, 3.537274)
 collision_layer = 2
 collision_mask = 5
 mass = 1.0
-move_radius = 0.5
-pull_strength = 5
-wall_normal = Vector3(0, 0, -1)
-right_grip_strength = 100
-left_grip_strength = 100
 
 [node name="ending" type="Area3D" parent="." unique_id=480757566]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16738129, 0)

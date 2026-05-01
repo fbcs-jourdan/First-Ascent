@@ -1,7 +1,6 @@
 extends Node2D
-
-@onready var goodzone: Area2D = $goodzone
-@onready var tick: Area2D = $tick
+@onready var goodzone: MeshInstance2D = $goodzone
+@onready var tick: MeshInstance2D = $tick
 
 var moving_right = true
 var moving_left = false
