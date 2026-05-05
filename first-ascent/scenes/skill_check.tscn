@@ -59,7 +59,7 @@ position = Vector2(-0.038461685, -5.9604645e-08)
 scale = Vector2(0.9999998, 1)
 shape = SubResource("RectangleShape2D_kpux6")
 
-[connection signal="body_entered" from="badzone/Area2D" to="." method="_on_badzone_body_entered"]
-[connection signal="body_exited" from="badzone/Area2D" to="." method="_on_badzone_body_exited"]
-[connection signal="body_entered" from="goodzone/Area2D" to="." method="_on_goodzone_body_entered"]
-[connection signal="body_exited" from="goodzone/Area2D" to="." method="_on_goodzone_body_exited"]
+[connection signal="area_entered" from="badzone/Area2D" to="." method="_on_badzone_area_entered"]
+[connection signal="area_exited" from="badzone/Area2D" to="." method="_on_badzone_area_exited"]
+[connection signal="area_entered" from="goodzone/Area2D" to="." method="_on_goodzone_area_entered"]
+[connection signal="area_exited" from="goodzone/Area2D" to="." method="_on_goodzone_area_exited"]

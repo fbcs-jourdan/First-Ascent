@@ -5,7 +5,7 @@ var has_grip = true
 var can_move = true
 var right_attached = false
 var left_attached = false
-
+var grip_value = 100
 var wind_blowing = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
