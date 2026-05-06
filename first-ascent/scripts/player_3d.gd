@@ -2,8 +2,11 @@ extends RigidBody3D
 @onready var left: MeshInstance3D = $left
 @onready var sfx: AudioStreamPlayer = $SFX
 
+@onready var progress_bar: ProgressBar = $ProgressBar
+
 @onready var right_hand: Node3D = $right/Sketchfab_Scene
 @onready var left_hand: Node3D = $left/Sketchfab_Scene
+@onready var skill_check: Node2D = $SkillCheck
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -38,7 +41,7 @@ var left_center
 func _physics_process(_delta):
 	# Pull into wall (toward the surface)
 	apply_central_force(-wall_normal * pull_strength)
-
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#right_hand.play_grab()
@@ -67,7 +70,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+	progress_bar.value = body.global_position.y
 	body.global_position.x = (right.global_position.x + left.global_position.x) * 0.4
 	var l_material = left.get_active_material(0)
 	var r_material = right.get_active_material(0)
@@ -99,11 +102,13 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("climb") and not climbing:
 		climbing = true
+		skill_check.visible = false
 	elif Input.is_action_just_pressed("climb") and climbing:
 		climbing = false
+		skill_check.visible = true
 	if not climbing:
-		left_grip_strength = clamp(left_grip_strength+10*delta,0, 150)
-		right_grip_strength = clamp(right_grip_strength+10*delta,0, 150)
+		left_grip_strength = clamp(left_grip_strength,0, 150)
+		right_grip_strength = clamp(right_grip_strength,0, 150)
 	if climbing:
 		if right_selected and Climb.left_attached:
 			left_grip_strength = clamp(left_grip_strength-20*delta,0, 150)
@@ -180,3 +185,8 @@ func update_limits():
 	left_limit = body.global_position.x + 1.5
 	upper_limit = body.global_position.y + 3
 	
+
+
+func _on_skill_check_passed() -> void:
+	left_grip_strength += 10
+	right_grip_strength += 10

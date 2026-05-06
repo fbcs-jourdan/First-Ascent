@@ -9,6 +9,7 @@ var moving_left = false
 var failing = true
 var passing = false
 
+signal passed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,8 +36,10 @@ func _process(delta: float) -> void:
 		if failing:
 			print("you missed")
 			goodzone.scale.x = 216.999954223633
-			goodzone.global_position.x = 615
+			goodzone.global_position.x = badzone.global_position.x + 345
 		elif passing:
+			passed.emit()
+			
 			Climb.grip_value += 10
 			goodzone.scale.x -= 20
 			goodzone.global_position.x -= 10 	

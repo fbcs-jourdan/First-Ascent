@@ -21,7 +21,7 @@ size = Vector2(1.0769234, 1.032787)
 script = ExtResource("1_igof4")
 
 [node name="badzone" type="MeshInstance2D" parent="." unique_id=867755590]
-position = Vector2(270.125, 41.625)
+position = Vector2(707.875, 813.62494)
 scale = Vector2(471.75, 26.75)
 mesh = SubResource("BoxMesh_6q03j")
 
@@ -34,7 +34,7 @@ scale = Vector2(1, 0.99999976)
 shape = SubResource("RectangleShape2D_igof4")
 
 [node name="goodzone" type="MeshInstance2D" parent="." unique_id=191113795]
-position = Vector2(615, 41)
+position = Vector2(1052.75, 812.99994)
 scale = Vector2(216.99995, 27.124996)
 mesh = SubResource("BoxMesh_igof4")
 
@@ -47,7 +47,7 @@ scale = Vector2(1, 0.99999976)
 shape = SubResource("RectangleShape2D_qu0f6")
 
 [node name="tick" type="MeshInstance2D" parent="." unique_id=582083783]
-position = Vector2(37.75, 40.5)
+position = Vector2(475.49997, 812.5)
 scale = Vector2(6.5, 61.000004)
 mesh = SubResource("BoxMesh_qu0f6")
 

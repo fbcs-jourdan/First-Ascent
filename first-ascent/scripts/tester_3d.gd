@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var player: RigidBody3D = $Player3D
 @onready var cam: Camera3D = $body/cam
+@onready var progress_bar: ProgressBar = $ProgressBar
 
 var wind_blowing = false
 
@@ -12,9 +13,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	print("player.y: " + str(player.global_position.y))
 	
 func _physics_process(delta: float) -> void:
+	#progress_bar.value = player.global_position.y
 	pass
 
 

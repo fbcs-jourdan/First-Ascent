@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://om6mf6t620vt" path="res://scenes/ hand.tscn" id="2_2djwe"]
 [ext_resource type="PackedScene" uid="uid://bl35y2xbb8m40" path="res://scenes/sfx.tscn" id="2_reoop"]
 [ext_resource type="PackedScene" uid="uid://byanqatbdkcqb" path="res://scenes/left_hand.tscn" id="3_yevqy"]
+[ext_resource type="PackedScene" uid="uid://cyscutbjwvo8d" path="res://scenes/skill_check.tscn" id="5_yevqy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rwvw1"]
 
@@ -140,3 +141,16 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2
 texture = SubResource("ViewportTexture_52vux")
 
 [node name="SFX" parent="." unique_id=1472400762 instance=ExtResource("2_reoop")]
+
+[node name="SkillCheck" parent="." unique_id=1863684502 instance=ExtResource("5_yevqy")]
+visible = false
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=655670019]
+offset_left = 1517.0
+offset_top = 180.0
+offset_right = 1549.0
+offset_bottom = 764.0
+max_value = 50.0
+fill_mode = 3
+
+[connection signal="passed" from="SkillCheck" to="." method="_on_skill_check_passed"]
