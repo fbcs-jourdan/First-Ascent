@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://br7cagpt61bdc"]
 
-[ext_resource type="PackedScene" uid="uid://ga6ja1jjtls0" path="res://scenes/player_3d.tscn" id="1_7tnf1"]
+[ext_resource type="PackedScene" uid="uid://ga6ja1jjtls0" path="res://scenes/Player/player_3d.tscn" id="1_7tnf1"]
 [ext_resource type="Script" uid="uid://vhhhfr5ealxi" path="res://scripts/tester_3d.gd" id="1_rgcra"]
 [ext_resource type="PackedScene" uid="uid://cstd1si0potrp" path="res://assets3D/uploads_files_4268409_rock1+texture/uploads_files_4268409_rocklow.fbx" id="3_v4bxi"]
 
@@ -35,12 +35,12 @@ material = SubResource("StandardMaterial3D_rgcra")
 [node name="World3D" type="Node3D" unique_id=1237177132]
 script = ExtResource("1_rgcra")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1257398498]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=87452133]
 environment = SubResource("Environment_rgcra")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1285728527]
-transform = Transform3D(-1, 7.5710346e-08, -4.3711385e-08, 0, 0.49999997, 0.86602545, 8.742278e-08, 0.86602545, -0.49999997, 0, 0, 0)
-shadow_enabled = true
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=2124012706]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)

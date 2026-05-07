@@ -3,6 +3,7 @@ extends RigidBody3D
 @onready var sfx: AudioStreamPlayer = $SFX
 
 @onready var progress_bar: ProgressBar = $ProgressBar
+@onready var body_area: Area3D = $body/body_area
 
 @onready var right_hand: Node3D = $right/Sketchfab_Scene
 @onready var left_hand: Node3D = $left/Sketchfab_Scene

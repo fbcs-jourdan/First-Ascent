@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://ga6ja1jjtls0"]
+
+[ext_resource type="Script" uid="uid://cr2m6q7mpwc1b" path="res://scripts/player_3d.gd" id="1_52vux"]
+[ext_resource type="PackedScene" uid="uid://om6mf6t620vt" path="res://scenes/Player/ hand.tscn" id="2_2djwe"]
+[ext_resource type="PackedScene" uid="uid://bl35y2xbb8m40" path="res://scenes/sfx.tscn" id="2_reoop"]
+[ext_resource type="PackedScene" uid="uid://byanqatbdkcqb" path="res://scenes/Player/left_hand.tscn" id="3_yevqy"]
+[ext_resource type="PackedScene" uid="uid://cyscutbjwvo8d" path="res://scenes/skill_check.tscn" id="5_yevqy"]
+[ext_resource type="Script" uid="uid://dl3i0b3lvlx08" path="res://scenes/Player/control.gd" id="6_wykx3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rmit1"]
+transparency = 1
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rwvw1"]
+material = SubResource("StandardMaterial3D_rmit1")
+
+[sub_resource type="SphereMesh" id="SphereMesh_rwvw1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rmit1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2djwe"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2djwe"]
+material = SubResource("StandardMaterial3D_2djwe")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_52vux"]
+viewport_path = NodePath("right/Node3D/SubViewport")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_52vux"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_52vux"]
+size = Vector3(1, 2.3422852, 0.1430664)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_reoop"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_reoop"]
+material = SubResource("StandardMaterial3D_reoop")
+
+[node name="Player3D" type="RigidBody3D" unique_id=1645288240]
+mass = 45.0
+gravity_scale = 0.0
+center_of_mass_mode = 1
+script = ExtResource("1_52vux")
+
+[node name="body" type="MeshInstance3D" parent="." unique_id=9787558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.28999996, 0, 0, 0)
+layers = 16
+mesh = SubResource("CapsuleMesh_rwvw1")
+
+[node name="head" type="MeshInstance3D" parent="body" unique_id=705407804]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 1.0000001, 0, 1.4139189, 0)
+mesh = SubResource("SphereMesh_rwvw1")
+
+[node name="cam" type="Camera3D" parent="body" unique_id=579446691]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 3.0145787e-07, 0, -3.448276, 0, 2.147039, -16.284176)
+current = true
+
+[node name="body_area" type="Area3D" parent="body" unique_id=218116574]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="body/body_area" unique_id=1474349421]
+shape = SubResource("CapsuleShape3D_rmit1")
+
+[node name="right" type="MeshInstance3D" parent="." unique_id=1710532116]
+transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.062, -0.793, 1.139, 0)
+mesh = SubResource("SphereMesh_2djwe")
+
+[node name="Sketchfab_Scene" parent="right" unique_id=295825598 instance=ExtResource("2_2djwe")]
+transform = Transform3D(5.1626717e-15, 3.1537766e-07, -2.75, 2.702, -3.1537766e-07, 0, 1.1810817e-07, 7.215, 1.2020632e-07, 0, 0.65965843, -0.91555387)
+
+[node name="Node3D" type="Node3D" parent="right" unique_id=1149170085]
+transform = Transform3D(2.9411764, 0, 0, 0, 2.9411764, 0, 0, 0, 6.6666665, -0.12045264, -4.94099, 0)
+
+[node name="SubViewport" type="SubViewport" parent="right/Node3D" unique_id=336905048]
+size = Vector2i(80, 27)
+
+[node name="right_bar" type="ProgressBar" parent="right/Node3D/SubViewport" unique_id=1427779710]
+visible = false
+offset_right = 80.0
+offset_bottom = 27.0
+value = 50.0
+
+[node name="Sprite3D" type="Sprite3D" parent="right/Node3D" unique_id=445570446]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.0967395, 0)
+visible = false
+texture = SubResource("ViewportTexture_52vux")
+
+[node name="Label3D" type="Label3D" parent="right" unique_id=1611417935]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -1.1558628)
+visible = false
+text = "R
+"
+font_size = 165
+
+[node name="Area3D" type="Area3D" parent="right" unique_id=1504384617]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="right/Area3D" unique_id=973877733]
+shape = SubResource("SphereShape3D_52vux")
+
+[node name="RightGripLabel" type="Label3D" parent="right" unique_id=1873687611]
+transform = Transform3D(-2.9411764, 0, -2.571258e-07, 0, 2.9411764, 0, 5.828185e-07, 0, -6.6666665, -0.42049575, 3.9684968, 0)
+font_size = 102
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1342573172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43790722, -0.030517578)
+shape = SubResource("BoxShape3D_52vux")
+
+[node name="left" type="MeshInstance3D" parent="." unique_id=1787077396]
+transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.062, 0.7930831, 1.1386967, 0)
+mesh = SubResource("SphereMesh_reoop")
+
+[node name="Sketchfab_Scene" parent="left" unique_id=1493238961 instance=ExtResource("3_yevqy")]
+transform = Transform3D(5.15885e-15, -3.14722e-07, -2.7000003, -2.6999996, -3.14722e-07, 0, -1.1802073e-07, 7.2000003, -1.1802076e-07, 0, 0.65999985, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="left/Sketchfab_Scene" unique_id=1141505665]
+transform = Transform3D(2.6455033, -2.0990811e-07, 2.0718589e-14, 1.7763568e-14, 2.2401433, -1.7774471e-07, 1.2705494e-21, 0, 2.6455023, 0, 0, 0)
+omni_range = 0.383
+omni_attenuation = -0.236
+
+[node name="LeftGripLabel" type="Label3D" parent="left" unique_id=203944288]
+transform = Transform3D(-2.9411764, 0, -2.571258e-07, 0, 2.9411764, 0, 5.828185e-07, 0, -6.6666665, 0.33109736, 5.479207, 0)
+font_size = 102
+
+[node name="Label3D" type="Label3D" parent="left" unique_id=617521321]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.044374704, 0.49118924, -1.1558628)
+visible = false
+text = "L"
+font_size = 165
+
+[node name="Area3D" type="Area3D" parent="left" unique_id=1913593256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1176472, 3.2235293, 0)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="left/Area3D" unique_id=578622582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1148946, -3.2124274, 0)
+shape = SubResource("SphereShape3D_52vux")
+
+[node name="Node3D2" type="Node3D" parent="left" unique_id=2005719088]
+transform = Transform3D(2.9411764, 0, 0, 0, 2.9411764, 0, 0, 0, 6.6666665, 0.055000067, -4.8981524, 0)
+visible = false
+
+[node name="SubViewport" type="SubViewport" parent="left/Node3D2" unique_id=1366724222]
+size = Vector2i(80, 27)
+
+[node name="left_bar" type="ProgressBar" parent="left/Node3D2/SubViewport" unique_id=1872057627]
+visible = false
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="Sprite3D" type="Sprite3D" parent="left/Node3D2" unique_id=1106450318]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.0967395, 0)
+texture = SubResource("ViewportTexture_52vux")
+
+[node name="SFX" parent="." unique_id=1472400762 instance=ExtResource("2_reoop")]
+
+[node name="SkillCheck" parent="." unique_id=1863684502 instance=ExtResource("5_yevqy")]
+visible = false
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=655670019]
+offset_left = 1517.0
+offset_top = 180.0
+offset_right = 1549.0
+offset_bottom = 764.0
+max_value = 50.0
+fill_mode = 3
+
+[node name="Control" type="Control" parent="." unique_id=1168352957]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1602.0
+offset_bottom = 902.0
+script = ExtResource("6_wykx3")
+
+[node name="RightLabel" type="Label" parent="Control" unique_id=594450436]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="passed" from="SkillCheck" to="." method="_on_skill_check_passed"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2dr402ywxp6s"]
 
 [ext_resource type="Script" uid="uid://m53xuq04fn5d" path="res://scripts/world_2d.gd" id="1_ieres"]
-[ext_resource type="PackedScene" uid="uid://ce60qtrh162g4" path="res://scenes/player.tscn" id="1_pneyj"]
+[ext_resource type="PackedScene" uid="uid://ce60qtrh162g4" path="res://scenes/Player/player_2d.tscn" id="1_pneyj"]
 [ext_resource type="Texture2D" uid="uid://dt1fsnosrp4gp" path="res://assets2D/FREE SAMPLE NPC Characters by antarcticbees/girl1_idle.png" id="2_4yy33"]
 [ext_resource type="PackedScene" uid="uid://4es6tced16wq" path="res://scenes/tile_map.tscn" id="2_yoglf"]
 [ext_resource type="Texture2D" uid="uid://cqusymvh45aex" path="res://assets2D/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/house_details.png" id="5_ju7hw"]

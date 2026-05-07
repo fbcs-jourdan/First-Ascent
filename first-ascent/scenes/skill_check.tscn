@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cyscutbjwvo8d"]
 
-[ext_resource type="Script" uid="uid://li6h3n83kwy8" path="res://scenes/skill_check.gd" id="1_igof4"]
+[ext_resource type="Script" uid="uid://li6h3n83kwy8" path="res://scripts/skill_check.gd" id="1_igof4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6q03j"]
 

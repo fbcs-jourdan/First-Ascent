@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://om6mf6t620vt"]
 
-[ext_resource type="Script" uid="uid://cu3ey3iiad7ov" path="res://scenes/_hand.gd" id="1_gbqrn"]
+[ext_resource type="Script" uid="uid://cu3ey3iiad7ov" path="res://scripts/_hand.gd" id="1_gbqrn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_erav7"]
 resource_name = "Material_357"

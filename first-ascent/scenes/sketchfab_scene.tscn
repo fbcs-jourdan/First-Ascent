@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://clcisif3yaqx2"]
 
 [ext_resource type="PackedScene" uid="uid://ce6bx0q7bnpve" path="res://assets3D/the_hand.glb" id="1_r57si"]
-[ext_resource type="Script" uid="uid://crjk2g7v6wov7" path="res://sketchfab_scene.gd" id="2_dhub7"]
+[ext_resource type="Script" uid="uid://crjk2g7v6wov7" path="res://scripts/sketchfab_scene.gd" id="2_dhub7"]
 
 [node name="Sketchfab_Scene" unique_id=1928874225 instance=ExtResource("1_r57si")]
 script = ExtResource("2_dhub7")

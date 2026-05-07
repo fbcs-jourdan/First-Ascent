@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://btghtpcjcqj0i"
+path="res://.godot/imported/hiker6.dialogue-dd699312662b841563cd79ace5f1bff1.tres"
+
+[deps]
+
+source_file="res://dialogue/hiker6.dialogue"
+dest_files=["res://.godot/imported/hiker6.dialogue-dd699312662b841563cd79ace5f1bff1.tres"]
+
+[params]
+
+defaults=true

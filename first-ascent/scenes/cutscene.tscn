@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b2dohe3yreor2"]
 
-[ext_resource type="Script" uid="uid://cj8ca2oxxa7xs" path="res://cutscene.gd" id="1_ix241"]
+[ext_resource type="Script" uid="uid://cj8ca2oxxa7xs" path="res://scripts/cutscene.gd" id="1_ix241"]
 [ext_resource type="PackedScene" uid="uid://cstd1si0potrp" path="res://assets3D/uploads_files_4268409_rock1+texture/uploads_files_4268409_rocklow.fbx" id="2_ix241"]
-[ext_resource type="PackedScene" uid="uid://om6mf6t620vt" path="res://scenes/ hand.tscn" id="3_bl24s"]
-[ext_resource type="PackedScene" uid="uid://byanqatbdkcqb" path="res://scenes/left_hand.tscn" id="4_u4yv4"]
+[ext_resource type="PackedScene" uid="uid://om6mf6t620vt" path="res://scenes/Player/ hand.tscn" id="3_bl24s"]
+[ext_resource type="PackedScene" uid="uid://byanqatbdkcqb" path="res://scenes/Player/left_hand.tscn" id="4_u4yv4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vk1u"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

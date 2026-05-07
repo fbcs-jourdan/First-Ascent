@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://ga6ja1jjtls0"]
 
 [ext_resource type="Script" uid="uid://cr2m6q7mpwc1b" path="res://scripts/player_3d.gd" id="1_52vux"]
-[ext_resource type="PackedScene" uid="uid://om6mf6t620vt" path="res://scenes/ hand.tscn" id="2_2djwe"]
+[ext_resource type="PackedScene" uid="uid://om6mf6t620vt" path="res://scenes/Player/ hand.tscn" id="2_2djwe"]
 [ext_resource type="PackedScene" uid="uid://bl35y2xbb8m40" path="res://scenes/sfx.tscn" id="2_reoop"]
-[ext_resource type="PackedScene" uid="uid://byanqatbdkcqb" path="res://scenes/left_hand.tscn" id="3_yevqy"]
+[ext_resource type="PackedScene" uid="uid://byanqatbdkcqb" path="res://scenes/Player/left_hand.tscn" id="3_yevqy"]
 [ext_resource type="PackedScene" uid="uid://cyscutbjwvo8d" path="res://scenes/skill_check.tscn" id="5_yevqy"]
+[ext_resource type="Script" uid="uid://dl3i0b3lvlx08" path="res://scenes/Player/control.gd" id="6_wykx3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rmit1"]
+transparency = 1
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rwvw1"]
+material = SubResource("StandardMaterial3D_rmit1")
 
 [sub_resource type="SphereMesh" id="SphereMesh_rwvw1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rmit1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2djwe"]
 
@@ -46,6 +53,11 @@ mesh = SubResource("SphereMesh_rwvw1")
 [node name="cam" type="Camera3D" parent="body" unique_id=579446691]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 3.0145787e-07, 0, -3.448276, 0, 2.147039, -16.284176)
 current = true
+
+[node name="body_area" type="Area3D" parent="body" unique_id=218116574]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="body/body_area" unique_id=1474349421]
+shape = SubResource("CapsuleShape3D_rmit1")
 
 [node name="right" type="MeshInstance3D" parent="." unique_id=1710532116]
 transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.062, -0.793, 1.139, 0)
@@ -152,5 +164,17 @@ offset_right = 1549.0
 offset_bottom = 764.0
 max_value = 50.0
 fill_mode = 3
+
+[node name="Control" type="Control" parent="." unique_id=1168352957]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1602.0
+offset_bottom = 902.0
+script = ExtResource("6_wykx3")
+
+[node name="RightLabel" type="Label" parent="Control" unique_id=594450436]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="passed" from="SkillCheck" to="." method="_on_skill_check_passed"]

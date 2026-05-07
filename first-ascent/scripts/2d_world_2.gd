@@ -29,3 +29,8 @@ func _on_friend_2_body_entered(body: Node2D) -> void:
 
 func _on_mountain_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://scenes/world_3d_2.tscn")
+
+
+func _on_friend_3_body_entered(body: Node2D) -> void:
+	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/hiker6.dialogue"))
+	Climb.can_move = false

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vhhhfr5ealxi" path="res://scripts/tester_3d.gd" id="1_2ewsj"]
 [ext_resource type="PackedScene" uid="uid://dra1qg8n71jy4" path="res://scenes/vfx.tscn" id="2_c4usr"]
-[ext_resource type="PackedScene" uid="uid://ga6ja1jjtls0" path="res://scenes/player_3d.tscn" id="3_fhgft"]
+[ext_resource type="PackedScene" uid="uid://ga6ja1jjtls0" path="res://scenes/Player/player_3d.tscn" id="3_fhgft"]
 [ext_resource type="PackedScene" uid="uid://cstd1si0potrp" path="res://assets3D/uploads_files_4268409_rock1+texture/uploads_files_4268409_rocklow.fbx" id="4_qsfxk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vk1u"]
