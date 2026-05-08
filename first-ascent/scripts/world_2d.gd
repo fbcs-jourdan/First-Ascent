@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_mountain_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://scenes/Tester3D.tscn")
+	get_tree().change_scene_to_file("res://scenes/Levels/Level1.tscn")
 	
 
 

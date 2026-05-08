@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_ending_body_entered(body: Node3D) -> void:
-	get_tree().change_scene_to_file("res://scenes/2d_world_2.tscn")
+	get_tree().change_scene_to_file("res://scenes/Levels/2DWorld2.tscn")
 	
 
 

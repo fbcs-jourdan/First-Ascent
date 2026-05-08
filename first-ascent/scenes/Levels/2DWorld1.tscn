@@ -1679,7 +1679,6 @@ texture = ExtResource("2_4yy33")
 [node name="player" parent="." unique_id=2134198571 instance=ExtResource("1_pneyj")]
 z_index = 366
 position = Vector2(890, 368)
-collision_layer = 2
 collision_mask = 5
 
 [node name="TileMap" parent="." unique_id=1099956392 instance=ExtResource("2_yoglf")]

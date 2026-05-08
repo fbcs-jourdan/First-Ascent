@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://rsb582ii4g86"]
+
+[ext_resource type="PackedScene" uid="uid://cdjf6mvxw13a1" path="res://assets3D/falling rock texture/rock4.fbx" id="1_lng14"]
+
+[node name="rock4" unique_id=2077839892 instance=ExtResource("1_lng14")]
+
+[node name="Light" parent="." index="1" unique_id=184259196]
+visible = false

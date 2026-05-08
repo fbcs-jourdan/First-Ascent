@@ -175,7 +175,7 @@ func _process(delta: float) -> void:
 			if left.global_position.y > upper_limit:
 				left.global_position.y = upper_limit
 	if int(right_grip_strength) == 0 and int(left_grip_strength) == 0: 
-		get_tree().change_scene_to_file("res://cutscene.tscn")
+		get_tree().change_scene_to_file("res://scenes/cutscene.tscn")
 func _warp_mouse_to_hand(new_hand: MeshInstance3D) -> void:
 	var screen_pos: Vector2 = cam.unproject_position(new_hand.global_transform.origin)
 	Input.warp_mouse(screen_pos)
