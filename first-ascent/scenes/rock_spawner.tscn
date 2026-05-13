@@ -29,13 +29,24 @@ one_shot = true
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1630935634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 54.474915, 9.496611)
 
-[node name="warning_sign" type="Sprite3D" parent="." unique_id=637119881]
-transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0, 55.48531, 3.5792687)
-texture = ExtResource("2_dyh4j")
-
 [node name="WarningTimer" type="Timer" parent="." unique_id=310475178]
 one_shot = true
 autostart = true
+
+[node name="Control" type="Control" parent="." unique_id=1132505729]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="warning_sign" type="Sprite3D" parent="Control" unique_id=637119881]
+transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0, 55.48531, 3.5792687)
+texture = ExtResource("2_dyh4j")
+
+[node name="Container" type="Container" parent="Control" unique_id=669454682]
+layout_mode = 0
+offset_right = 1600.0
+offset_bottom = 900.0
 
 [connection signal="timeout" from="RockTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="RockTimer" to="." method="_on_rock_timer_timeout"]
