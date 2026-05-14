@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b2ih6xspx5ish"]
 
 [ext_resource type="Script" uid="uid://bbctqjfghniuy" path="res://scripts/rock.gd" id="1_1di36"]
-[ext_resource type="PackedScene" uid="uid://rsb582ii4g86" path="res://scenes/rock_4.tscn" id="2_mek2u"]
+[ext_resource type="PackedScene" uid="uid://cdjf6mvxw13a1" path="res://assets3D/falling rock texture/rock4.fbx" id="2_mek2u"]
 
 [node name="RigidBody3D" type="RigidBody3D" unique_id=1680568846]
 script = ExtResource("1_1di36")
 
-[node name="rock4" parent="." unique_id=1845206525 instance=ExtResource("2_mek2u")]
+[node name="rock5" parent="." unique_id=2077839892 instance=ExtResource("2_mek2u")]
