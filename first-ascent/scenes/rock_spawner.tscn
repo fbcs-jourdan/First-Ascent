@@ -6,6 +6,10 @@
 [node name="RockSpawner" type="Node3D" unique_id=1194020508]
 script = ExtResource("1_o8ghg")
 
+[node name="warning_sign" type="Sprite3D" parent="." unique_id=637119881]
+transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0, 55.48531, 3.5792687)
+texture = ExtResource("2_dyh4j")
+
 [node name="SpawnPositions" type="Node3D" parent="." unique_id=1982196261]
 
 [node name="Marker3D" type="Marker3D" parent="SpawnPositions" unique_id=157141516]
@@ -39,15 +43,11 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="warning_sign" type="Sprite3D" parent="Control" unique_id=637119881]
-transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0, 55.48531, 3.5792687)
-texture = ExtResource("2_dyh4j")
-
 [node name="Container" type="Container" parent="Control" unique_id=669454682]
 layout_mode = 0
 offset_right = 1600.0
 offset_bottom = 900.0
 
-[connection signal="timeout" from="RockTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="RockTimer" to="." method="_on_rock_timer_timeout"]
+[connection signal="timeout" from="RockTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="WarningTimer" to="." method="_on_warning_timer_timeout"]

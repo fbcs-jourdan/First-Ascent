@@ -3,7 +3,8 @@ extends Node3D
 @onready var rock_timer: Timer = $RockTimer
 @onready var warning_timer: Timer = $WarningTimer
 @onready var container: Container = $Control/Container
-@onready var warning_sign: Sprite3D = $Control/warning_sign
+
+@onready var warning_sign: Sprite3D = $warning_sign
 
 var rock_scene = preload("res://scenes/rock.tscn")
 
