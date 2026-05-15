@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://oskcbpuofwro"]
 
 [ext_resource type="Script" uid="uid://43p5ilxm265w" path="res://scripts/rock_spawner.gd" id="1_o8ghg"]
+[ext_resource type="Texture2D" uid="uid://bwmxyva413wip" path="res://assets3D/warning_sign.png" id="2_dyh4j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dyh4j"]
+size = Vector3(154.54596, 1, 71.0589)
 
 [node name="RockSpawner" type="Node3D" unique_id=1194020508]
 script = ExtResource("1_o8ghg")
-
-[node name="warning_sign" type="Sprite3D" parent="." unique_id=637119881]
-transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0, 55.48531, 3.5792687)
-texture = ExtResource("2_dyh4j")
 
 [node name="SpawnPositions" type="Node3D" parent="." unique_id=1982196261]
 
@@ -26,31 +26,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6035583, 53.398766, 3.112)
 [node name="Marker3D3" type="Marker3D" parent="SpawnPositions" unique_id=2057166171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 53.398766, 3.112)
 
-[node name="Timer" type="Timer" parent="." unique_id=1068597168]
-autostart = true
+[node name="RockTimer" type="Timer" parent="." unique_id=1068597168]
+one_shot = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1630935634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 54.474915, 9.496611)
 
-<<<<<<< HEAD
+[node name="warning_sign" type="Sprite3D" parent="." unique_id=637119881]
+transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0, 55.48531, 3.5792687)
+texture = ExtResource("2_dyh4j")
+
 [node name="WarningTimer" type="Timer" parent="." unique_id=310475178]
 one_shot = true
 autostart = true
 
-[node name="Control" type="Control" parent="." unique_id=1132505729]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="deathzone" type="Area3D" parent="." unique_id=791504412]
+collision_layer = 4
 
-[node name="Container" type="Container" parent="Control" unique_id=669454682]
-layout_mode = 0
-offset_right = 1600.0
-offset_bottom = 900.0
+[node name="CollisionShape3D" type="CollisionShape3D" parent="deathzone" unique_id=1530820827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040534973, 2.2024155, 0.885519)
+shape = SubResource("BoxShape3D_dyh4j")
 
 [connection signal="timeout" from="RockTimer" to="." method="_on_rock_timer_timeout"]
 [connection signal="timeout" from="RockTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="WarningTimer" to="." method="_on_warning_timer_timeout"]
-=======
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
->>>>>>> parent of 15ac7c7 (Add warning sign and timed rock spawn logic)
+[connection signal="area_entered" from="deathzone" to="." method="_on_deathzone_area_entered"]

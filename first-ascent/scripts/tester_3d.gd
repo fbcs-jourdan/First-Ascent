@@ -3,6 +3,7 @@ extends Node3D
 @onready var player: RigidBody3D = $Player3D
 @onready var cam: Camera3D = $body/cam
 @onready var progress_bar: ProgressBar = $ProgressBar
+@onready var rock_spawner: Node3D = $RockSpawner
 
 var wind_blowing = false
 
