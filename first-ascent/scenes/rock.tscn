@@ -14,5 +14,5 @@ script = ExtResource("1_1di36")
 [node name="rock4" parent="." unique_id=1845206525 instance=ExtResource("2_mek2u")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1740171418]
-transform = Transform3D(0.59318006, -0.72348726, 0.3531341, 1.3473658e-08, 0.43863782, 0.89866394, -0.80506986, -0.5330695, 0.2601912, 0.07186346, -0.29427475, 0.06737539)
+transform = Transform3D(0.59318006, -0.72348726, 0.3531341, 1.3473658e-08, 0.43863782, 0.89866394, -0.80506986, -0.5330695, 0.2601912, 0.0076864213, -0.29427475, 0.06737539)
 shape = SubResource("CapsuleShape3D_mek2u")
